@@ -1,0 +1,50 @@
+theme = "gruvbox-dark"
+icons = "awesome5"
+
+[[block]]
+block = "docker"
+interval = 10
+format = "{running}/{total}"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "available"
+unit = "GiB"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mug}GB ({Mup}%)"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{barchart} {utilization}%"
+
+[[block]]
+block = "net"
+device = "eno1"
+interval = 5
+
+[[block]]
+block = "sound"
+step_width = 3
+format = "{volume}% {output_name}"
+[block.mappings]
+"alsa_output.usb-Focusrite_Scarlett_2i2_USB-00.analog-stereo" = ""
+
+[[block]]
+block = "time"
+interval = 60
+timezone = "Europe/Stockholm"
+format = "W%W %a %m/%d %H:%M SE"
+
+[[block]]
+block = "time"
+interval = 60
+timezone = "Asia/Kathmandu"
+format = "%I:%M%P NP"
+
