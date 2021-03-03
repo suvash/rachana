@@ -92,6 +92,19 @@ in
           [greeter]
           show-password-label = false
           show-input-cursor = false
+	  password-alignment = left
+
+          [greeter-theme]
+	  background-image = "/etc/login-wallpapers/unsplash.jpg"
+	  # background-color = "#212E53"
+	  # window-color = "#EBACA2"
+	  # border-color = "#BED3C3"
+	  # border-width = 2px
+	  # layout-space = 15
+	  # password-background-color = "#212E53"
+	  # password-border-color = "#BED3C3"
+	  # password-border-width = 2px
+	  # password-border-radius = 0.0em
         '';
       };
     };
@@ -154,6 +167,11 @@ in
   environment.variables = {
     TERMINAL = "${config.settings.terminal}";
     EDITOR = "${config.settings.editor}";
+  };
+
+  environment.etc."login-wallpapers/unsplash.jpg" = {
+    mode = "0555";
+    source = ../../common/wallpapers/login/unsplash.jpg;
   };
 
   # Packages
@@ -390,6 +408,10 @@ in
 
     home.file.".screenshots/.keep".text = "";
 
+    home.file.".wallpapers" = {
+      source = ../../common/wallpapers;
+      recursive = true;
+    };
 
     xsession.windowManager.i3 = {
       enable = true;
