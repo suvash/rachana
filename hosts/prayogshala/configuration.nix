@@ -69,10 +69,19 @@ in
   services.xserver.autoRepeatDelay = 200;
   services.xserver.autoRepeatInterval = 60;
 
+  # Select a desktop manager - no window management
+  services.xserver.desktopManager = {
+    xterm.enable = false;
+    xfce = {
+      enable = true;
+      noDesktop = true;
+      enableXfwm = false;
+    };
+  };
+
   # Select a display/login manager
   services.xserver.displayManager = {
     defaultSession = "xfce+i3";
-    # sddm.enable = true;
     lightdm = {
       enable = true;
       greeters.mini = {
@@ -88,20 +97,12 @@ in
     };
   };
 
-  # Select a desktop manager - no window management
-  services.xserver.desktopManager = {
-    xfce = {
-      enable = true;
-      noDesktop = true;
-      enableXfwm = false;
-    };
-    xterm.enable = false;
-  };
-
   # Select a window manager
-  services.xserver.windowManager.i3 = {
-    enable = true;
-    package = pkgs.i3-gaps;
+  services.xserver.windowManager = {
+    i3 = {
+      enable = true;
+      package = pkgs.i3-gaps;
+    };
   };
 
   # Avahi
