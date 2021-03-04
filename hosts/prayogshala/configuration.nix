@@ -1,28 +1,25 @@
 { config, lib, pkgs, ... }:
 
-
 let
   home-manager = builtins.fetchGit {
     url = "https://github.com/nix-community/home-manager.git";
     rev = "209566c752c4428c7692c134731971193f06b37c";
     ref = "release-20.09";
   };
-in
-{
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+in {
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
 
-      # host settings
-      ./settings.nix
+    # host settings
+    ./settings.nix
 
-      # home manager
-      (import "${home-manager}/nixos")
+    # home manager
+    (import "${home-manager}/nixos")
 
-      # other modules
-      ./intel_cpu_gpu.nix
-      ./yubikey.nix
-    ];
+    # other modules
+    ./intel_cpu_gpu.nix
+    ./yubikey.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   # boot.loader.systemd-boot.enable = true;
@@ -89,19 +86,19 @@ in
           [greeter]
           show-password-label = false
           show-input-cursor = false
-	  password-alignment = left
+          password-alignment = left
 
           [greeter-theme]
-	  background-image = "/etc/login-wallpapers/unsplash.png"
-	  # background-color = "#212E53"
-	  # window-color = "#EBACA2"
-	  # border-color = "#BED3C3"
-	  # border-width = 2px
-	  # layout-space = 15
-	  # password-background-color = "#212E53"
-	  # password-border-color = "#BED3C3"
-	  # password-border-width = 2px
-	  # password-border-radius = 0.0em
+          background-image = "/etc/login-wallpapers/unsplash.png"
+          # background-color = "#212E53"
+          # window-color = "#EBACA2"
+          # border-color = "#BED3C3"
+          # border-width = 2px
+          # layout-space = 15
+          # password-background-color = "#212E53"
+          # password-border-color = "#BED3C3"
+          # password-border-width = 2px
+          # password-border-radius = 0.0em
         '';
       };
     };
@@ -153,12 +150,7 @@ in
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    htop
-    git
-  ];
+  environment.systemPackages = with pkgs; [ vim wget htop git ];
 
   environment.variables = {
     TERMINAL = "${config.settings.terminal}";
@@ -207,6 +199,7 @@ in
       unzip
       dfc
 
+      fasd
       tmux
 
       sops
@@ -232,6 +225,8 @@ in
       feh
       flameshot
 
+      nixfmt
+
       awscli
       google-cloud-sdk
       iamy
@@ -246,7 +241,6 @@ in
       slack
       zoom-us
     ];
-
 
     services.gpg-agent = {
       enable = true;
@@ -336,7 +330,7 @@ in
 
     services.picom = {
       enable = true;
-      inactiveDim = "0.2";
+      inactiveDim = "0.05";
     };
 
     services.random-background = {
@@ -348,35 +342,119 @@ in
 
     services.screen-locker = {
       enable = true;
-      lockCmd = "${pkgs.i3lock}/bin/i3lock --nofork --image /etc/login-wallpapers/unsplash.png";
+      lockCmd =
+        "${pkgs.i3lock}/bin/i3lock --nofork --image /etc/login-wallpapers/unsplash.png";
       inactiveInterval = 1;
     };
 
     services.caffeine.enable = true;
     services.clipmenu.enable = true;
 
-    programs.rofi= {
+    programs.rofi = {
       enable = true;
       font = "Ubuntu Mono 18";
       terminal = "${pkgs.kitty}/bin/kitty";
     };
 
-   programs.kitty = {
-     enable = true;
-     settings = {
-       font_family = "Ubuntu Mono";
-       font_size = "16";
-     };
-   };
+    programs.kitty = {
+      enable = true;
+      settings = {
+        font_family = "Ubuntu Mono";
+        font_size = "16";
+      };
+    };
 
     programs.fish = {
       enable = true;
       interactiveShellInit = ''
-      if test -d "$HOME/.config/base16-shell"
-        set BASE16_SHELL "$HOME/.config/base16-shell/"
-        source "$BASE16_SHELL/profile_helper.fish"
-      end
+        if test -d "$HOME/.config/base16-shell"
+          set BASE16_SHELL "$HOME/.config/base16-shell/"
+          source "$BASE16_SHELL/profile_helper.fish"
+        end
       '';
+      shellAbbrs = {
+        # listing
+        "..." = "../..";
+        l = "exa -la";
+        b = "bat --show-all";
+        v = "vim (fzf)";
+        ll = "ls -lah";
+        lsd = "tree --dirsfirst -ChF -L 1";
+
+        # git things
+        ga = "git add";
+        gs = "git show --stat";
+        gst = "git status -sb";
+        gd = "git diff";
+        gdc = "git diff --cached";
+        gp = "git push";
+        gpf = "git push --force-with-lease";
+        gpu = "git push --set-upstream origin (git branch --show-current)";
+        gpd = "git push --delete origin (git branch --show-current)";
+        gsu = "git submodule update";
+        gup =
+          "git fetch --all --prune --prune-tags; and git rebase --rebase-merges '@{upstream}'";
+        gsp =
+          "git stash; and git fetch --all -p; and git rebase -p '@{upstream}'; and git stash pop";
+        gprn = "git remote prune origin --dry-run";
+        gm = "git merge --no-ff --log";
+        gc = "git commit -v";
+        gca = "git commit -v --amend";
+        gco = "git checkout";
+        gcob = "git checkout -b";
+        gcm = "git checkout main";
+        gcms = "git checkout master";
+        gb = "git branch";
+        gbr = "git branch -r";
+        gbd = "git branch --delete";
+        gbdf = "git branch --delete --force";
+        gcp = "git cherry-pick";
+        gl = "git log --oneline --decorate=full";
+        grhh = "git reset HEAD --hard";
+        gcln = "git clean -f -d";
+        gdmlb = "git branch --merged | grep -v '*' | xargs -n 1 git branch -d";
+        grbm = "git rebase -i (git show-branch --merge-base main)";
+        grbms = "git rebase -i (git show-branch --merge-base master)";
+
+        # nix things
+        ns = "nix search";
+        nss = "nix-env -qaP --description '.*<here>.*'";
+
+        # provisioning things
+        mi = "bash ~/rachana/hosts/(hostname)/provision/init.sh";
+        mb = "bash ~/rachana/hosts/(hostname)/provision/build.sh";
+
+        # docker things
+        di = "docker image ls";
+        dc = "docker container ls";
+        dn = "docker network ls";
+        dv = "docker volume ls";
+        ds = "docker system df";
+        dprn = "docker system prune --volumes";
+
+        # monitor
+        p1 = "ping 1.1.1.1";
+        ports = "netstat -tunap";
+
+        # other
+        du = "du -chs *";
+        fonts = "fc-list : family";
+        httpserve = "python -m http.server 7531";
+      };
+      functions = {
+        cleansshhosts = ''
+          awk -F',' "/$argv/"'{print $1}'  ~/.ssh/known_hosts | xargs -r -n 1 ssh-keygen -R'';
+        thanksfish = "set -U fish_greeting";
+      };
+      plugins = [{
+        name = "fasd";
+        src = pkgs.fetchFromGitHub {
+          owner = "oh-my-fish";
+          repo = "plugin-fasd";
+          rev = "38a5b6b6011106092009549e52249c6d6f501fba";
+          sha256 = "06v37hqy5yrv5a6ssd1p3cjd9y3hnp19d3ab7dag56fs1qmgyhbs";
+        };
+      }];
     };
 
     programs.emacs.enable = true;
@@ -395,8 +473,10 @@ in
 
     home.sessionPath = [ "/home/${config.settings.username}/.local/bin" ];
 
-    home.file.".local/bin/configure-slimblade-trackball.sh".source = ./scripts/configure-slimblade-trackball.sh;
-    home.file.".local/bin/configure-kensington-advantage.sh".source = ./scripts/configure-kensington-advantage.sh;
+    home.file.".local/bin/configure-slimblade-trackball.sh".source =
+      ./scripts/configure-slimblade-trackball.sh;
+    home.file.".local/bin/configure-kensington-advantage.sh".source =
+      ./scripts/configure-kensington-advantage.sh;
 
     home.file.".screenshots/.keep".text = "";
 
@@ -409,7 +489,7 @@ in
       enable = true;
       config = {
         modifier = "Mod4";
-        fonts = [ "Ubuntu Mono 14"];
+        fonts = [ "Ubuntu Mono 14" ];
 
         keybindings = lib.mkOptionDefault {
           ## Missing
@@ -437,8 +517,10 @@ in
           "Mod4+ctrl+Down" = "exec pactl set-sink-volume @DEFAULT_SINK@ -10%";
 
           # Utilities
-          "Mod4+ctrl+l" = "exec i3lock --nofork --image /etc/login-wallpapers/unsplash.png";
-          "Mod4+ctrl+w" = "exec feh --bg-tile --no-fehbg --randomize ~/.wallpapers/tiled";
+          "Mod4+ctrl+l" =
+            "exec i3lock --nofork --image /etc/login-wallpapers/unsplash.png";
+          "Mod4+ctrl+w" =
+            "exec feh --bg-tile --no-fehbg --randomize ~/.wallpapers/tiled";
           "Mod4+ctrl+v" = "exec CM_LAUNCHER=rofi clipmenu";
           "Mod4+ctrl+a" = "exec configure-slimblade-trackball.sh";
           "Mod4+ctrl+3" = "exec flameshot full --path ~/.screenshots";
@@ -453,15 +535,16 @@ in
           "Mod4+ctrl+z" = "exec zoom-us";
 
           # Notifications
-          "Mod4+ctrl+n" = "exec notify-send -t 4000 Network \"LAN: $(ip addr show eno1 | awk '/inet /{print $2}')\\nWAN: $(curl ifconfig.me)\"";
+          "Mod4+ctrl+n" = ''
+            exec notify-send -t 4000 Network "LAN: $(ip addr show eno1 | awk '/inet /{print $2}')\nWAN: $(curl ifconfig.me)"'';
         };
 
-        bars = [
-          {
-            fonts = [ "Ubuntu Mono, FontAwesome 14" ];
-            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${./config/i3status/i3status-rust.toml}";
-          }
-        ];
+        bars = [{
+          fonts = [ "Ubuntu Mono, FontAwesome 14" ];
+          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${
+              ./config/i3status/i3status-rust.toml
+            }";
+        }];
 
         gaps = {
           inner = 10;
