@@ -52,6 +52,12 @@ in {
   #   keyMap = "us";
   # };
 
+  # GPG agent with SSH support
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+
   # Enable the X Server and autorun
   services.xserver.enable = true;
   services.xserver.autorun = true;
@@ -241,11 +247,6 @@ in {
       slack
       zoom-us
     ];
-
-    services.gpg-agent = {
-      enable = true;
-      enableSshSupport = true;
-    };
 
     services.xcape.enable = true;
     services.pasystray.enable = true;
@@ -458,7 +459,6 @@ in {
     };
 
     programs.emacs.enable = true;
-    programs.gpg.enable = true;
 
     programs.git = {
       enable = true;
