@@ -91,7 +91,7 @@ in
 	  password-alignment = left
 
           [greeter-theme]
-	  background-image = "/etc/login-wallpapers/unsplash.jpg"
+	  background-image = "/etc/login-wallpapers/unsplash.png"
 	  # background-color = "#212E53"
 	  # window-color = "#EBACA2"
 	  # border-color = "#BED3C3"
@@ -164,9 +164,9 @@ in
     EDITOR = "${config.settings.editor}";
   };
 
-  environment.etc."login-wallpapers/unsplash.jpg" = {
+  environment.etc."login-wallpapers/unsplash.png" = {
     mode = "0555";
-    source = ../../common/wallpapers/login/unsplash.jpg;
+    source = ../../common/wallpapers/login/unsplash.png;
   };
 
   # Packages
@@ -347,7 +347,7 @@ in
 
     services.screen-locker = {
       enable = true;
-      lockCmd = "${pkgs.i3lock}/bin/i3lock --nofork -c 000000";
+      lockCmd = "${pkgs.i3lock}/bin/i3lock --nofork --image /etc/login-wallpapers/unsplash.png";
       inactiveInterval = 1;
     };
 
@@ -436,7 +436,7 @@ in
           "Mod4+ctrl+Down" = "exec pactl set-sink-volume @DEFAULT_SINK@ -10%";
 
           # Utilities
-          "Mod4+ctrl+l" = "exec i3lock -n -c 000000";
+          "Mod4+ctrl+l" = "exec i3lock --nofork --image /etc/login-wallpapers/unsplash.png";
           "Mod4+ctrl+w" = "exec feh --bg-tile --no-fehbg --randomize ~/.wallpapers/tiled";
           "Mod4+ctrl+v" = "exec CM_LAUNCHER=rofi clipmenu";
           "Mod4+ctrl+a" = "exec configure-slimblade-trackball.sh";
