@@ -352,12 +352,12 @@ in
       inactiveDim = "0.2";
     };
 
-    # services.random-background = {
-    #   enable = true;
-    #   display = "tile";
-    #   imageDirectory = "%h/.wallpapers";
-    #   interval = "1h";
-    # };
+    services.random-background = {
+      enable = true;
+      display = "tile";
+      imageDirectory = "%h/.wallpapers/tiled";
+      interval = "1h";
+    };
 
     services.screen-locker = {
       enable = true;
@@ -446,7 +446,7 @@ in
 
           # Utilities
           "Mod4+ctrl+l" = "exec i3lock -n -c 000000";
-          "Mod4+ctrl+w" = "exec feh --bg-tile --no-fehbg --randomize ~/.wallpapers";
+          "Mod4+ctrl+w" = "exec feh --bg-tile --no-fehbg --randomize ~/.wallpapers/tiled";
           "Mod4+ctrl+v" = "exec CM_LAUNCHER=rofi clipmenu";
           "Mod4+ctrl+a" = "exec configure-slimblade-trackball.sh";
           "Mod4+ctrl+3" = "exec flameshot full --path ~/.screenshots";
