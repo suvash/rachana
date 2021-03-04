@@ -581,6 +581,16 @@
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 #+end_src
 
+** Nix files
+
+#+begin_src emacs-lisp
+
+;; Nix mode
+(use-package nix-mode
+  :mode "\\.nix\\'"
+  :hook (before-save . nix-format-buffer))
+#+end_src
+
 * Leader keys
 ** Quick leader keys
 

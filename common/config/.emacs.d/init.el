@@ -381,6 +381,11 @@
 ;; Set executable bit on executable buffers
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
+;; Nix mode
+(use-package nix-mode
+  :mode "\\.nix\\'"
+  :hook (before-save . nix-format-buffer))
+
 (suv/define-leader-keys
   "SPC" '(other-window :which-key "other window")
   "." '(dired-jump :which-key "dired jump")
