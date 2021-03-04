@@ -470,8 +470,8 @@ in
       };
 
       extraConfig = ''
-        exec --no-startup-id configure-slimblade-trackball.sh
-        exec --no-startup-id configure-kensington-advantage.sh
+        exec --no-startup-id ~/.local/bin/configure-slimblade-trackball.sh
+        exec --no-startup-id ~/.local/bin/configure-kensington-advantage.sh
       '';
     };
   };
