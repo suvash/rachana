@@ -387,6 +387,11 @@ in
       };
     };
 
+    home.sessionPath = [ "/home/${config.settings.username}/.local/bin" ];
+
+    home.file.".local/bin/configure-slimblade-trackball.sh".source = ./scripts/configure-slimblade-trackball.sh;
+    home.file.".local/bin/configure-kensington-advantage.sh".source = ./scripts/configure-kensington-advantage.sh;
+
     home.file.".screenshots/.keep".text = "";
 
     home.file.".wallpapers" = {
@@ -458,10 +463,13 @@ in
           smartBorders = "on";
         };
       };
+
+      extraConfig = ''
+        exec --no-startup-id configure-slimblade-trackball.sh
+        exec --no-startup-id configure-kensington-advantage.sh
+      '';
     };
   };
-
-
 
   # List services that you want to enable:
 
