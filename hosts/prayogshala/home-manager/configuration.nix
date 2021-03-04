@@ -9,77 +9,14 @@ let
 in {
   imports = [
     # host settings
-    ./settings.nix
+    ../settings.nix
 
     # home manager
     (import "${home-manager}/nixos")
   ];
 
   home-manager.users.${config.settings.username} = {
-    home.packages = with pkgs; [
-      gnumake
-      cmake
-
-      gitAndTools.diff-so-fancy
-
-      firefox
-      google-chrome
-      brave
-
-      ag
-      ripgrep
-      exa
-      bat
-      fzf
-      jq
-      ranger
-      visidata
-
-      unzip
-      dfc
-
-      fasd
-      tmux
-
-      sops
-
-      tldr
-
-      whois
-      bind
-
-      spotify
-      playerctl
-
-      kitty
-      i3status-rust
-      arandr
-      vnstat
-
-      libnotify
-
-      xcape
-      xautolock
-      xss-lock
-      feh
-      flameshot
-
-      nixfmt
-
-      awscli
-      google-cloud-sdk
-      iamy
-
-      docker-compose
-
-      kaggle
-
-      kubectl
-      kubectx
-
-      slack
-      zoom-us
-    ];
+    home.packages = import ./packages.nix { inherit pkgs; };
 
     services.xcape.enable = true;
     services.pasystray.enable = true;
@@ -314,7 +251,7 @@ in {
     home.file.".screenshots/.keep".text = "";
 
     home.file.".wallpapers" = {
-      source = ../../common/wallpapers;
+      source = ../../../common/wallpapers;
       recursive = true;
     };
 
@@ -355,7 +292,7 @@ in {
           "Mod4+ctrl+w" =
             "exec feh --bg-tile --no-fehbg --randomize ~/.wallpapers/tiled";
           "Mod4+ctrl+v" = "exec CM_LAUNCHER=rofi clipmenu";
-          "Mod4+ctrl+a" = "exec configure-slimblade-trackball.sh";
+          "Mod4+ctrl+k" = "exec ~/.local/bin/configure-kensington-advantage.sh";
           "Mod4+ctrl+3" = "exec flameshot full --path ~/.screenshots";
           "Mod4+ctrl+4" = "exec flameshot gui --path ~/.screenshots";
 
@@ -366,6 +303,7 @@ in {
           "Mod4+ctrl+c" = "exec google-chrome-stable --incognito";
           "Mod4+ctrl+s" = "exec spotify";
           "Mod4+ctrl+z" = "exec zoom-us";
+          "Mod4+ctrl+x" = "exec systemctl --user restart xcape";
 
           # Notifications
           "Mod4+ctrl+n" = ''

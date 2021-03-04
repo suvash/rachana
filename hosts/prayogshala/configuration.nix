@@ -8,7 +8,7 @@
     ./settings.nix
 
     # home manager settings
-    ./home-manager-configuration.nix
+    ./home-manager/configuration.nix
 
     # other modules
     ./intel_cpu_gpu.nix
