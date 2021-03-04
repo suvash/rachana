@@ -20,6 +20,7 @@ in
       (import "${home-manager}/nixos")
 
       # other modules
+      ./intel_cpu_gpu.nix
       ./yubikey.nix
     ];
 
