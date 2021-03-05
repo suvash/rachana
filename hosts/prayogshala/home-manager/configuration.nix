@@ -143,7 +143,6 @@ in {
     programs.vim.enable = true;
 
     programs.nushell.enable = true;
-    programs.tmux.enable = true;
 
     programs.zathura.enable = true;
 
@@ -247,6 +246,11 @@ in {
         ds = "docker system df";
         dprn = "docker system prune --volumes";
 
+        # tmux things
+        t = "tmux new";
+        ta = "tmux attach";
+        tl = "tmux list-sessions";
+
         # monitor
         p1 = "ping 1.1.1.1";
         ports = "netstat -tunap";
@@ -296,6 +300,8 @@ in {
       source = ../../../common/wallpapers;
       recursive = true;
     };
+
+    home.file.".tmux.conf".source = ../../../common/config/tmux/tmux.conf;
 
     xdg.configFile."nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 

@@ -57,7 +57,7 @@ with pkgs;
 
   # System monitoring
   acpi
-  # htop
+  htop
   iotop
   iftop
   dfc
@@ -87,6 +87,7 @@ with pkgs;
   parallel
   mosh
   fasd
+  tmux
 
   # DNS
   dnsutils
