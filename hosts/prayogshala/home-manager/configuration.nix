@@ -251,6 +251,9 @@ in {
         ta = "tmux attach";
         tl = "tmux list-sessions";
 
+        # gpg things
+        gpgrst = "gpg-connect-agent --quiet updatestartuptty /bye";
+
         # monitor
         p1 = "ping 1.1.1.1";
         ports = "netstat -tunap";
