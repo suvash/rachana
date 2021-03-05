@@ -16,6 +16,11 @@ in {
   ];
 
   home-manager.users.${config.settings.username} = {
+    nixpkgs.config = {
+      allowUnfree = true;
+      allowBroken = false;
+    };
+
     home.packages = import ./packages.nix { inherit pkgs; };
 
     services.xcape.enable = true;
@@ -121,6 +126,40 @@ in {
     services.caffeine.enable = true;
     services.clipmenu.enable = true;
 
+    programs.autorandr.enable = true;
+    programs.bat.enable = true;
+    programs.feh.enable = true;
+    programs.jq.enable = true;
+
+    programs.brave.enable = true;
+    programs.firefox.enable = true;
+    programs.chromium.enable = true;
+    programs.google-chrome.enable = true;
+    programs.qutebrowser.enable = true;
+
+    programs.emacs.enable = true;
+    programs.vscode.enable = true;
+    programs.neovim.enable = true;
+    programs.vim.enable = true;
+
+    programs.nushell.enable = true;
+    programs.tmux.enable = true;
+
+    programs.zathura.enable = true;
+
+    programs.mpv.enable = true;
+    programs.obs-studio.enable = true;
+
+    programs.fzf = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
+    programs.gh = {
+      enable = true;
+      gitProtocol = "ssh";
+    };
+
     programs.rofi = {
       enable = true;
       font = "Ubuntu Mono 18";
@@ -133,6 +172,11 @@ in {
         font_family = "Ubuntu Mono";
         font_size = "16";
       };
+    };
+
+    programs.autojump = {
+      enable = true;
+      enableFishIntegration = true;
     };
 
     programs.fish = {
@@ -228,8 +272,6 @@ in {
       }];
     };
 
-    programs.emacs.enable = true;
-
     programs.git = {
       enable = true;
       userName = "${config.settings.fullname}";
@@ -254,6 +296,8 @@ in {
       source = ../../../common/wallpapers;
       recursive = true;
     };
+
+    xdg.configFile."nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
     xsession.windowManager.i3 = {
       enable = true;
@@ -300,7 +344,8 @@ in {
           "Mod4+ctrl+e" = "exec emacs";
           "Mod4+ctrl+f" = "exec firefox";
           "Mod4+ctrl+b" = "exec brave --incognito";
-          "Mod4+ctrl+c" = "exec google-chrome-stable --incognito";
+          "Mod4+ctrl+c" = "exec chromium --incognito";
+          "Mod4+ctrl+q" = "exec qutebrowser";
           "Mod4+ctrl+s" = "exec spotify";
           "Mod4+ctrl+z" = "exec zoom-us";
           "Mod4+ctrl+x" = "exec systemctl --user restart xcape";

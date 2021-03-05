@@ -8,18 +8,12 @@ with pkgs;
   cmake
   gnumake
 
-  # Editors
-  # vim
-  neovim
-
   # Git family
-  # git
   tig
   gitAndTools.diff-so-fancy
 
   # Media
   vlc
-  zathura
 
   # Pulseaudio tools
   paprefs
@@ -31,25 +25,15 @@ with pkgs;
   spotify
   playerctl
 
-  # Browsers
-  firefox
-  google-chrome
-  brave
-  qutebrowser
-
   # File manipulation
   ag
   ripgrep
   exa
-  bat
-  fzf
-  jq
   ranger
   tree
   visidata
   xsv
   pigz
-  jq
   unzip
   multitail
   dos2unix
@@ -58,7 +42,6 @@ with pkgs;
   tldr
 
   # X server/window
-  feh
   arandr
   flameshot
   xcape
@@ -101,7 +84,6 @@ with pkgs;
 
   # Terminals / shells
   kitty
-  tmux
   parallel
   mosh
   fasd

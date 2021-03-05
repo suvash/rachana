@@ -100,7 +100,7 @@
   # ENVIRONMENT =====================================================================
 
   # Install packages
-  environment.systemPackages = with pkgs; [ vim wget htop git ];
+  environment.systemPackages = with pkgs; [ nano wget ];
 
   # Env vars
   environment.variables = {
@@ -231,12 +231,6 @@
       addresses = true;
       workstation = true;
     };
-  };
-
-  # Autorandr
-  services.autorandr = {
-    enable = true;
-    defaultTarget = "${config.settings.hostname}";
   };
 
   # Vnstat
