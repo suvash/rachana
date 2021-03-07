@@ -13,6 +13,7 @@
     # other modules
     ./intel_cpu_gpu.nix
     ./yubikey.nix
+    ./tailscale.nix
   ];
 
   # BOOT ============================================================================
@@ -38,9 +39,12 @@
   networking.hostName = "${config.settings.hostname}"; # Define your hostname.
 
   # Open ports in the firewall.
-  networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 7531 ];
-  networking.firewall.allowedUDPPorts = [ 7531 ];
+  networking.firewall = {
+    enable = true;
+    trustedInterfaces = [ "tailscale0" ];
+    allowedUDPPorts = [ config.services.tailscale.port 7531 ];
+    allowedTCPPorts = [ 7531 ];
+  };
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
