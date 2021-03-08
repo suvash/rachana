@@ -27,6 +27,7 @@ with pkgs;
 
   # File manipulation
   ag
+  fd
   ripgrep
   exa
   ranger
@@ -40,6 +41,7 @@ with pkgs;
 
   # Help
   tldr
+  tokei
 
   # X server/window
   arandr
@@ -58,6 +60,7 @@ with pkgs;
   # System monitoring
   acpi
   htop
+  procs
   iotop
   iftop
   dfc
