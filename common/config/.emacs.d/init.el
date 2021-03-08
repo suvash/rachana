@@ -11,6 +11,8 @@
 
 (defvar suv/default-doom-theme 'doom-gruvbox)
 
+(defvar suv/emacs-custom-file "~/.emacs.d/custom.el")
+
 ;; Hide startup screen and message
 (setq inhibit-startup-message t
       inhibit-startup-screen t
@@ -65,6 +67,10 @@
 (set-keyboard-coding-system 'utf-8)
 (when (display-graphic-p)
    (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
+
+;; Setup and load separate custom file
+(setq custom-file suv/emacs-custom-file)
+(load custom-file)
 
 ;; Setup repositories
 (require 'package)

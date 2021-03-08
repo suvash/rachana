@@ -19,6 +19,8 @@
 (defvar suv/default-variable-pitch-font-height 200)
 
 (defvar suv/default-doom-theme 'doom-gruvbox)
+
+(defvar suv/emacs-custom-file "~/.emacs.d/custom.el")
 #+end_src
 
 * Bootstrap the editor
@@ -96,6 +98,14 @@
 (set-keyboard-coding-system 'utf-8)
 (when (display-graphic-p)
    (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
+#+end_src
+
+** Emacs custom file
+
+#+begin_src emacs-lisp
+;; Setup and load separate custom file
+(setq custom-file suv/emacs-custom-file)
+(load custom-file)
 #+end_src
 
 ** Package system setup
