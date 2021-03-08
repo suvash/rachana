@@ -245,7 +245,7 @@
 
 (use-package ivy-hydra)
 
-(defhydra hydra-text-scale (:timeout 4)
+(defhydra text-scale-hydra (:timeout 4)
   "scale text"
   ("a" text-scale-decrease "smaller")
   ("s" text-scale-increase "larger")
