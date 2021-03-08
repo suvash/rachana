@@ -591,6 +591,24 @@
   :hook (before-save . nix-format-buffer))
 #+end_src
 
+** Python files
+
+#+begin_src emacs-lisp
+
+;; Elpy
+(use-package elpy
+  :init
+  (elpy-enable))
+
+;; Blacken formatting
+(use-package blacken
+  :hook (python-mode . blacken-mode))
+
+(use-package py-isort
+  :mode "\\.py\\'"
+  :hook (before-save . py-isort-before-save))
+#+end_src
+
 * Leader keys
 ** Quick leader keys
 

@@ -386,6 +386,19 @@
   :mode "\\.nix\\'"
   :hook (before-save . nix-format-buffer))
 
+;; Elpy
+(use-package elpy
+  :init
+  (elpy-enable))
+
+;; Blacken formatting
+(use-package blacken
+  :hook (python-mode . blacken-mode))
+
+(use-package py-isort
+  :mode "\\.py\\'"
+  :hook (before-save . py-isort-before-save))
+
 (suv/define-leader-keys
   "SPC" '(other-window :which-key "other window")
   "." '(dired-jump :which-key "dired jump")
