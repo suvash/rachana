@@ -51,6 +51,7 @@ with pkgs;
   xss-lock
   xorg.xev
   libnotify
+  xclip
 
   # Hardware info
   lshw
