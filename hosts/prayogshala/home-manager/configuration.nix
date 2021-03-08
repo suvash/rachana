@@ -151,6 +151,11 @@ in {
     programs.mpv.enable = true;
     programs.obs-studio.enable = true;
 
+    programs.starship = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
     programs.fzf = {
       enable = true;
       enableFishIntegration = true;
