@@ -451,6 +451,14 @@
 
 #+end_src
 
+** Direnv (envrc) integration
+
+#+begin_src emacs-lisp
+
+(use-package envrc
+  :init (envrc-global-mode))
+#+end_src
+
 * Version control
 ** Magit
 

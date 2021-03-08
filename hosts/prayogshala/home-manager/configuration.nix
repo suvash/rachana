@@ -146,6 +146,8 @@ in {
 
     programs.zathura.enable = true;
 
+    programs.direnv.enable = true;
+
     programs.mpv.enable = true;
     programs.obs-studio.enable = true;
 

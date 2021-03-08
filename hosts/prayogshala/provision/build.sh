@@ -12,4 +12,4 @@
 sudo nixos-rebuild switch
 
 # Collect unreachable path in nix store + all generations older and than 30d
-sudo nix-collect-garbage --delete-older-than 30d
+# sudo nix-collect-garbage --delete-older-than 30d

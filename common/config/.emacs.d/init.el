@@ -301,6 +301,9 @@
   "pr" '(counsel-projectile-rg :which-key "search(ripgrep)")
   "pk" '(projectile-kill-buffers :which-key "kill buffers"))
 
+(use-package envrc
+  :init (envrc-global-mode))
+
 ;; use magit
 (use-package magit)
 
