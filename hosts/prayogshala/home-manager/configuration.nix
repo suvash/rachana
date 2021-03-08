@@ -249,7 +249,15 @@ in {
         # tmux things
         t = "tmux new";
         ta = "tmux attach";
-        tl = "tmux list-sessions";
+        tls = "tmux list-sessions";
+
+        # xfce things
+        xfl = "xfconf-query -c xsettings -p /Net/ThemeName -s 'Adwaita'";
+        xfd = "xfconf-query -c xsettings -p /Net/ThemeName -s 'Adwaita-dark'";
+
+        # terminal themes
+        td = "base16-onedark";
+        tl = "base16-one-light";
 
         # gpg things
         gpgrst = "gpg-connect-agent --quiet updatestartuptty /bye";

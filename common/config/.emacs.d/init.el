@@ -9,7 +9,8 @@
 (defvar suv/default-variable-pitch-font "Ubuntu")
 (defvar suv/default-variable-pitch-font-height 200)
 
-(defvar suv/default-doom-theme 'doom-gruvbox)
+(defvar suv/default-dark-theme 'doom-one)
+(defvar suv/default-light-theme 'doom-one-light)
 
 (defvar suv/emacs-custom-file "~/.emacs.d/custom.el")
 
@@ -105,8 +106,9 @@
 ;; use a doom theme and flash modeline on bell
 (use-package doom-themes
   :config
-  (load-theme suv/default-doom-theme t)
-  (doom-themes-visual-bell-config))
+  (load-theme suv/default-dark-theme t)
+  (doom-themes-visual-bell-config)
+  (doom-themes-org-config))
 
 ;; Set the font faces
 (set-face-attribute 'default nil :font suv/default-fixed-pitch-font :height suv/default-fixed-pitch-font-height)
@@ -256,6 +258,11 @@
   ("a" text-scale-decrease "smaller")
   ("s" text-scale-increase "larger")
   ("RET" nil "done" :exit t))
+
+(defhydra theme-switch-hydra (:timeout 4)
+  "switch light/dark theme"
+  ("l" (load-theme suv/default-light-theme t) "Light theme")
+  ("d" (load-theme suv/default-dark-theme t) "Dark theme"))
 
 (use-package dumb-jump)
 
@@ -411,6 +418,7 @@
   "b" '(counsel-switch-buffer-other-window :which-key "switch to buffer")
   "k" '(kill-this-buffer :which-key "kill this buffer")
   "w" '(delete-trailing-whitespace :which-key "delete trailing whitespace")
+  "t" '(theme-switch-hydra/body :which-key "theme switch")
   "j" '(dumb-jump-hydra/body :which-key "dumb jump")
   "z" '(text-scale-hydra/body :which-key "text scale")
   "0" '(delete-window :which-key "delete window")
