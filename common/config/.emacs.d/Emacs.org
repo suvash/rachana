@@ -674,6 +674,13 @@
   :hook (before-save . nix-format-buffer))
 #+end_src
 
+** YAML mode
+
+#+begin_src emacs-lisp
+(use-package yaml-mode
+  :mode ("\\.ya?ml\\'" . yaml-mode))
+#+end_src
+
 ** Python files
 
 #+begin_src emacs-lisp

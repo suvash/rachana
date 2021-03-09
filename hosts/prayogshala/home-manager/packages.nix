@@ -131,6 +131,7 @@ with pkgs;
 
   # Linters etc
   nixfmt
+  yamllint
   ispell
 
   # Communication

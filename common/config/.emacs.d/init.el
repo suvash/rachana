@@ -475,6 +475,9 @@
   :mode "\\.nix\\'"
   :hook (before-save . nix-format-buffer))
 
+(use-package yaml-mode
+  :mode ("\\.ya?ml\\'" . yaml-mode))
+
 ;; Elpy
 (use-package elpy
   :init
