@@ -71,7 +71,8 @@
 
 ;; Setup and load separate custom file
 (setq custom-file suv/emacs-custom-file)
-(load custom-file)
+(if (file-exists-p custom-file)
+    (load custom-file))
 
 ;; Setup repositories
 (require 'package)
