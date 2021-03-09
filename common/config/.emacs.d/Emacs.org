@@ -210,6 +210,18 @@
   :init (global-flycheck-mode 1))
 #+end_src
 
+** Flyspell
+
+#+begin_src emacs-lisp
+;; use flyspell for spellchecks
+(use-package flyspell
+  :init
+  (setq ispell-dictionary "english")
+  :hook
+  (prog-mode . flyspell-prog-mode)
+  (text-mode . flyspell-mode))
+#+end_src
+
 ** Dimmer
 
 #+begin_src emacs-lisp

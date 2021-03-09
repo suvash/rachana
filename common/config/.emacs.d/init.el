@@ -137,6 +137,14 @@
 (use-package flycheck
   :init (global-flycheck-mode 1))
 
+;; use flyspell for spellchecks
+(use-package flyspell
+  :init
+  (setq ispell-dictionary "english")
+  :hook
+  (prog-mode . flyspell-prog-mode)
+  (text-mode . flyspell-mode))
+
 ;; dim the other buffer
 (use-package dimmer
   :init (dimmer-mode 1))

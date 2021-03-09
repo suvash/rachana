@@ -131,6 +131,7 @@ with pkgs;
 
   # Linters etc
   nixfmt
+  ispell
 
   # Communication
   slack
