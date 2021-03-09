@@ -681,6 +681,14 @@
   :mode ("\\.ya?ml\\'" . yaml-mode))
 #+end_src
 
+** Markdown mode
+
+#+begin_src emacs-lisp
+(use-package markdown-mode
+  :mode (("\\.markdown$" . markdown-mode)
+         ("\\.md$" . markdown-mode)))
+#+end_src
+
 ** Python files
 
 #+begin_src emacs-lisp
