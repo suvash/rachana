@@ -259,10 +259,18 @@
   ("s" text-scale-increase "larger")
   ("RET" nil "done" :exit t))
 
-(defhydra theme-switch-hydra (:timeout 4)
-  "switch light/dark theme"
-  ("l" (load-theme suv/default-light-theme t) "Light theme")
-  ("d" (load-theme suv/default-dark-theme t) "Dark theme"))
+(defun suv/load-light-theme ()
+  (interactive)
+  (load-theme suv/default-light-theme t))
+
+(defun suv/load-dark-theme ()
+  (interactive)
+  (load-theme suv/default-dark-theme t))
+
+(suv/define-leader-keys
+  "t"  '(:ignore t :which-key "load light/dark theme")
+  "tl" '(suv/load-light-theme :which-key "Light theme")
+  "td" '(suv/load-dark-theme :which-key "Dark theme"))
 
 (use-package dumb-jump)
 
@@ -417,7 +425,6 @@
   "b" '(counsel-switch-buffer-other-window :which-key "switch to buffer")
   "k" '(kill-this-buffer :which-key "kill this buffer")
   "w" '(delete-trailing-whitespace :which-key "delete trailing whitespace")
-  "t" '(theme-switch-hydra/body :which-key "theme switch")
   "j" '(dumb-jump-hydra/body :which-key "dumb jump")
   "z" '(text-scale-hydra/body :which-key "text scale")
   "0" '(delete-window :which-key "delete window")
