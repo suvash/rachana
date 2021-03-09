@@ -478,6 +478,9 @@
 (use-package yaml-mode
   :mode ("\\.ya?ml\\'" . yaml-mode))
 
+(use-package json-mode
+  :mode ("\\.json\\'" . json-mode))
+
 (use-package markdown-mode
   :mode (("\\.markdown$" . markdown-mode)
          ("\\.md$" . markdown-mode)))

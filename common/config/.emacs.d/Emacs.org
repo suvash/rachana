@@ -681,6 +681,13 @@
   :mode ("\\.ya?ml\\'" . yaml-mode))
 #+end_src
 
+** JSON mode
+
+#+begin_src emacs-lisp
+(use-package json-mode
+  :mode ("\\.json\\'" . json-mode))
+#+end_src
+
 ** Markdown mode
 
 #+begin_src emacs-lisp
