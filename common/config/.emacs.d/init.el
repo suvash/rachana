@@ -94,8 +94,10 @@
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)
 
+;; no littering in emacs.d
 (use-package no-littering)
 
+;; smooth scrolling
 (use-package smooth-scrolling
 :init (smooth-scrolling-mode 1))
 
@@ -115,9 +117,11 @@
 (set-face-attribute 'fixed-pitch nil :font suv/default-fixed-pitch-font :height suv/default-fixed-pitch-font-height)
 (set-face-attribute 'variable-pitch nil :font suv/default-variable-pitch-font :height suv/default-variable-pitch-font-height)
 
+;; colors for delimiters
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
+;; balance parens
 (use-package smartparens
   :init (smartparens-global-mode 1))
 
@@ -133,9 +137,11 @@
 (use-package flycheck
   :init (global-flycheck-mode 1))
 
+;; dim the other buffer
 (use-package dimmer
   :init (dimmer-mode 1))
 
+;; linux specific functions
 (defun suv/linux-only-setup ()
   ;; copy-paste form both clipboards
   (setq x-select-enable-primary t)
@@ -144,6 +150,7 @@
 (when (string-equal system-type "gnu/linux")
   (suv/linux-only-setup))
 
+;; macos only functions
 (defun suv/copy-from-macos ()
   (shell-command-to-string "pbpaste"))
 
@@ -202,12 +209,14 @@
   :after ivy
   :init (ivy-rich-mode 1))
 
+;; setup which-key
 (use-package which-key
   :init (which-key-mode)
   :diminish
   :config
   (setq which-key-idle-delay 0.1))
 
+;; helpful package
 (use-package helpful
   :custom
   (counsel-describe-function-function #'helpful-callable)
@@ -261,24 +270,29 @@
     :prefix "SPC"
     :non-normal-prefix "C-SPC"))
 
+;; hydra
 (use-package hydra)
-
+;; and ivy-hydra
 (use-package ivy-hydra)
 
+;; custom hydra
 (defhydra text-scale-hydra (:timeout 4)
   "scale text"
   ("a" text-scale-decrease "smaller")
   ("s" text-scale-increase "larger")
   ("RET" nil "done" :exit t))
 
+;; load light theme
 (defun suv/load-light-theme ()
   (interactive)
   (load-theme suv/default-light-theme t))
 
+;; load dark theme
 (defun suv/load-dark-theme ()
   (interactive)
   (load-theme suv/default-dark-theme t))
 
+;; leader keys for theme switching
 (suv/define-leader-keys
   "t"  '(:ignore t :which-key "load light/dark theme")
   "tl" '(suv/load-light-theme :which-key "Light theme")
@@ -311,6 +325,7 @@
 (use-package counsel-projectile
   :config (counsel-projectile-mode))
 
+;; leader keys for projectile
 (suv/define-leader-keys
   "p"  '(:ignore t :which-key "projectile")
   "ps" '(projectile-switch-project :which-key "switch project")
@@ -321,6 +336,7 @@
   "pr" '(counsel-projectile-rg :which-key "search(ripgrep)")
   "pk" '(projectile-kill-buffers :which-key "kill buffers"))
 
+;; direnv integration
 (use-package envrc
   :init (envrc-global-mode))
 
@@ -339,6 +355,7 @@
   "g"  '(:ignore t :which-key "git (via magit)")
   "gs" '(magit-status :which-key "status"))
 
+;; git gutter
 (use-package git-gutter
   :init
   (global-git-gutter-mode +1))
@@ -370,11 +387,13 @@
   (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
   (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch))
 
+;; org tempo setup <shTAB
 (defun suv/org-tempo-setup ()
   (require 'org-tempo)
   (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
   (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp")))
 
+;; org setup
 (defun suv/org-mode-setup ()
   (org-indent-mode)
   (variable-pitch-mode 1)
@@ -382,27 +401,33 @@
   (suv/org-font-setup)
   (suv/org-tempo-setup))
 
+;; use org package
 (use-package org
   :hook (org-mode . suv/org-mode-setup)
   :config
   (setq org-ellipsis " ▾"))
 
+;; org bullets
 (use-package org-bullets
   :after org
   :hook (org-mode . org-bullets-mode))
 
+;; org styling
 (defun suv/org-mode-visual-fill ()
   (setq visual-fill-column-width 120
         visual-fill-column-center-text t)
   (visual-fill-column-mode 1))
 
+;; use org styling
 (use-package visual-fill-column
   :hook (org-mode . suv/org-mode-visual-fill))
 
+;; org babel
 (org-babel-do-load-languages
   'org-babel-load-languages
   '((emacs-lisp . t)))
 
+;; org babel tangle
 (defun suv/org-babel-tangle-config ()
   (when (string-equal (file-name-nondirectory (buffer-file-name))
                       "Emacs.org")
@@ -439,6 +464,7 @@
 (use-package blacken
   :hook (python-mode . blacken-mode))
 
+;; main leader keys
 (suv/define-leader-keys
   "SPC" '(other-window :which-key "other window")
   "." '(dired-jump :which-key "dired jump")

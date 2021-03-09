@@ -138,12 +138,14 @@
 ** No littering
 
 #+begin_src emacs-lisp
+;; no littering in emacs.d
 (use-package no-littering)
 #+end_src
 
 ** Smooth scrolling
 
 #+begin_src emacs-lisp
+;; smooth scrolling
 (use-package smooth-scrolling
 :init (smooth-scrolling-mode 1))
 #+end_src
@@ -175,15 +177,15 @@
 ** Rainbow delimiters
 
 #+begin_src emacs-lisp
-
+;; colors for delimiters
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
-
 #+end_src
 
 ** Smartparens
 
 #+begin_src emacs-lisp
+;; balance parens
 (use-package smartparens
   :init (smartparens-global-mode 1))
 #+end_src
@@ -211,13 +213,16 @@
 ** Dimmer
 
 #+begin_src emacs-lisp
+;; dim the other buffer
 (use-package dimmer
   :init (dimmer-mode 1))
 #+end_src
 
+* OS specific bootstrapping
 ** Linux only
 
 #+begin_src emacs-lisp
+;; linux specific functions
 (defun suv/linux-only-setup ()
   ;; copy-paste form both clipboards
   (setq x-select-enable-primary t)
@@ -230,6 +235,7 @@
 ** Darwin only
 
 #+begin_src emacs-lisp
+;; macos only functions
 (defun suv/copy-from-macos ()
   (shell-command-to-string "pbpaste"))
 
@@ -263,17 +269,14 @@
 ** Global keybindings
 
 #+begin_src emacs-lisp
-
 ;; some global keybindings
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region)
-
 #+end_src
 
 ** Counsel and Ivy
 
 #+begin_src emacs-lisp
-
 ;; setup counsel
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
@@ -300,25 +303,23 @@
 (use-package ivy-rich
   :after ivy
   :init (ivy-rich-mode 1))
-
 #+end_src
 
 ** Which key
 
 #+begin_src emacs-lisp
-
+;; setup which-key
 (use-package which-key
   :init (which-key-mode)
   :diminish
   :config
   (setq which-key-idle-delay 0.1))
-
 #+end_src
 
 ** Helpful
 
 #+begin_src emacs-lisp
-
+;; helpful package
 (use-package helpful
   :custom
   (counsel-describe-function-function #'helpful-callable)
@@ -328,13 +329,11 @@
   ([remap describe-command] . helpful-command)
   ([remap describe-variable] . counsel-describe-variable)
   ([remap describe-key] . helpful-key))
-
 #+end_src
 
 ** Evil
 
 #+begin_src emacs-lisp
-
 ;; needed for undo/redo properly in evil
 (use-package undo-tree
   :init (global-undo-tree-mode))
@@ -368,13 +367,11 @@
   :after evil
   :config
   (evil-collection-init))
-
 #+end_src
 
 ** General - Leader definer
 
 #+begin_src emacs-lisp
-
 ;; general config
 (use-package general
   :after evil
@@ -383,41 +380,42 @@
     :keymaps '(normal insert visual emacs)
     :prefix "SPC"
     :non-normal-prefix "C-SPC"))
-
 #+end_src
 
 ** Hydra
 
 #+begin_src emacs-lisp
+;; hydra
 (use-package hydra)
-
+;; and ivy-hydra
 (use-package ivy-hydra)
 #+end_src
 
 ** Text scaling
 
 #+begin_src emacs-lisp
-
+;; custom hydra
 (defhydra text-scale-hydra (:timeout 4)
   "scale text"
   ("a" text-scale-decrease "smaller")
   ("s" text-scale-increase "larger")
   ("RET" nil "done" :exit t))
-
 #+end_src
 
 ** Dark/Light theme
 
 #+begin_src emacs-lisp
-
+;; load light theme
 (defun suv/load-light-theme ()
   (interactive)
   (load-theme suv/default-light-theme t))
 
+;; load dark theme
 (defun suv/load-dark-theme ()
   (interactive)
   (load-theme suv/default-dark-theme t))
 
+;; leader keys for theme switching
 (suv/define-leader-keys
   "t"  '(:ignore t :which-key "load light/dark theme")
   "tl" '(suv/load-light-theme :which-key "Light theme")
@@ -444,7 +442,6 @@
 ** Projectile + Counsel
 
 #+begin_src emacs-lisp
-
 ;; use projectile
 (use-package projectile
   :diminish projectile-mode
@@ -459,13 +456,12 @@
 ;; use counsel projectile integration
 (use-package counsel-projectile
   :config (counsel-projectile-mode))
-
 #+end_src
 
 ** Projectile leader keys
 
 #+begin_src emacs-lisp
-
+;; leader keys for projectile
 (suv/define-leader-keys
   "p"  '(:ignore t :which-key "projectile")
   "ps" '(projectile-switch-project :which-key "switch project")
@@ -475,13 +471,12 @@
   "pd" '(projectile-dired :which-key "load dired")
   "pr" '(counsel-projectile-rg :which-key "search(ripgrep)")
   "pk" '(projectile-kill-buffers :which-key "kill buffers"))
-
 #+end_src
 
 ** Direnv (envrc) integration
 
 #+begin_src emacs-lisp
-
+;; direnv integration
 (use-package envrc
   :init (envrc-global-mode))
 #+end_src
@@ -513,6 +508,7 @@
 ** Git gutter
 
 #+begin_src emacs-lisp
+;; git gutter
 (use-package git-gutter
   :init
   (global-git-gutter-mode +1))
@@ -549,11 +545,13 @@
   (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
   (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch))
 
+;; org tempo setup <shTAB
 (defun suv/org-tempo-setup ()
   (require 'org-tempo)
   (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
   (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp")))
 
+;; org setup
 (defun suv/org-mode-setup ()
   (org-indent-mode)
   (variable-pitch-mode 1)
@@ -561,32 +559,33 @@
   (suv/org-font-setup)
   (suv/org-tempo-setup))
 
+;; use org package
 (use-package org
   :hook (org-mode . suv/org-mode-setup)
   :config
   (setq org-ellipsis " ▾"))
-
 #+end_src
+
 
 ** Org bullets
 
 #+begin_src emacs-lisp
-
+;; org bullets
 (use-package org-bullets
   :after org
   :hook (org-mode . org-bullets-mode))
-
 #+end_src
 
 ** Org visual fill
 
 #+begin_src emacs-lisp
-
+;; org styling
 (defun suv/org-mode-visual-fill ()
   (setq visual-fill-column-width 120
         visual-fill-column-center-text t)
   (visual-fill-column-mode 1))
 
+;; use org styling
 (use-package visual-fill-column
   :hook (org-mode . suv/org-mode-visual-fill))
 
@@ -595,17 +594,16 @@
 ** Org babel
 
 #+begin_src emacs-lisp
-
+;; org babel
 (org-babel-do-load-languages
   'org-babel-load-languages
   '((emacs-lisp . t)))
-
 #+end_src
 
 ** Org bable tangle
 
 #+begin_src emacs-lisp
-
+;; org babel tangle
 (defun suv/org-babel-tangle-config ()
   (when (string-equal (file-name-nondirectory (buffer-file-name))
                       "Emacs.org")
@@ -614,14 +612,12 @@
       (org-babel-tangle))))
 
 (add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'suv/org-babel-tangle-config)))
-
 #+end_src
 
 * Dired mode
 ** Dired packages
 
 #+begin_src emacs-lisp
-
 ;; Dired
 (use-package dired
   :ensure nil
@@ -631,7 +627,6 @@
 (use-package diredfl
   :after dired
   :hook (dired-mode . diredfl-mode))
-
 #+end_src
 
 * Filetypes
@@ -646,7 +641,6 @@
 ** Nix files
 
 #+begin_src emacs-lisp
-
 ;; Nix mode
 (use-package nix-mode
   :mode "\\.nix\\'"
@@ -656,7 +650,6 @@
 ** Python files
 
 #+begin_src emacs-lisp
-
 ;; Elpy
 (use-package elpy
   :init
@@ -671,7 +664,7 @@
 ** Quick leader keys
 
 #+begin_src emacs-lisp
-
+;; main leader keys
 (suv/define-leader-keys
   "SPC" '(other-window :which-key "other window")
   "." '(dired-jump :which-key "dired jump")
@@ -684,7 +677,6 @@
   "1" '(delete-other-windows :which-key "delete other windows")
   "2" '(split-window-below :which-key "split window below")
   "3" '(split-window-right :which-key "split window right"))
-
 #+end_src
 
 * Ready
