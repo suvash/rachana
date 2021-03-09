@@ -188,6 +188,26 @@
   :init (smartparens-global-mode 1))
 #+end_src
 
+** Company mode
+
+#+begin_src emacs-lisp
+;; use company for completion suggestions
+(use-package company
+  :init
+  (setq company-idle-delay 0.3
+        company-show-numbers t
+        company-tooltip-align-annotations t)
+  :hook (after-init . global-company-mode))
+#+end_src
+
+** Flycheck
+
+#+begin_src emacs-lisp
+;; use flycheck for all kinds of syntax completion
+(use-package flycheck
+  :init (global-flycheck-mode 1))
+#+end_src
+
 ** Dimmer
 
 #+begin_src emacs-lisp

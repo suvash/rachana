@@ -121,6 +121,18 @@
 (use-package smartparens
   :init (smartparens-global-mode 1))
 
+;; use company for completion suggestions
+(use-package company
+  :init
+  (setq company-idle-delay 0.3
+        company-show-numbers t
+        company-tooltip-align-annotations t)
+  :hook (after-init . global-company-mode))
+
+;; use flycheck for all kinds of syntax completion
+(use-package flycheck
+  :init (global-flycheck-mode 1))
+
 (use-package dimmer
   :init (dimmer-mode 1))
 
