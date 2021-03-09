@@ -312,6 +312,14 @@
 (use-package envrc
   :init (envrc-global-mode))
 
+;; for search using ripgrep
+(use-package deadgrep)
+
+(suv/define-leader-keys
+  "r"  '(:ignore t :which-key "ripgrep search")
+  "rg" '(deadgrep :which-key "search pattern")
+  "rk" '(deadgrep-kill-all-buffers :which-key "kill open deadgrep buffers"))
+
 ;; use magit
 (use-package magit)
 

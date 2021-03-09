@@ -466,24 +466,28 @@
   :init (envrc-global-mode))
 #+end_src
 
+** Deadgrep (via ripgrep) search
+
+#+begin_src emacs-lisp
+;; for search using ripgrep
+(use-package deadgrep)
+
+(suv/define-leader-keys
+  "r"  '(:ignore t :which-key "ripgrep search")
+  "rg" '(deadgrep :which-key "search pattern")
+  "rk" '(deadgrep-kill-all-buffers :which-key "kill open deadgrep buffers"))
+#+end_src
+
 * Version control
 ** Magit
 
 #+begin_src emacs-lisp
-
 ;; use magit
 (use-package magit)
-
-#+end_src
-
-** Magit definer
-
-#+begin_src emacs-lisp
 
 (suv/define-leader-keys
   "g"  '(:ignore t :which-key "git (via magit)")
   "gs" '(magit-status :which-key "status"))
-
 #+end_src
 
 ** Git gutter
