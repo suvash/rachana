@@ -134,6 +134,10 @@
         company-tooltip-align-annotations t)
   :hook (after-init . global-company-mode))
 
+;; origami mode for code folding
+(use-package origami
+  :init (global-origami-mode 1))
+
 ;; use flycheck for all kinds of syntax completion
 (use-package flycheck
   :init (global-flycheck-mode 1))

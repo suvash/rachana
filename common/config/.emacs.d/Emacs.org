@@ -203,6 +203,14 @@
   :hook (after-init . global-company-mode))
 #+end_src
 
+** Origami
+
+#+begin_src emacs-lisp
+;; origami mode for code folding
+(use-package origami
+  :init (global-origami-mode 1))
+#+end_src
+
 ** Flycheck
 
 #+begin_src emacs-lisp
