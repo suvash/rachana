@@ -221,6 +221,13 @@
   :hook
   (prog-mode . flyspell-prog-mode)
   (text-mode . flyspell-mode))
+
+(defhydra flyspell-hydra (:timeout 4)
+  "scale text"
+  ("b" flyspell-buffer "flyspell buffer")
+  ("n" flyspell-goto-next-error "go to next error")
+  ("f" flyspell-correct-word-before-point "correct word before point")
+  ("RET" nil "done" :exit t))
 #+end_src
 
 ** Dimmer
@@ -685,6 +692,7 @@
   "w" '(delete-trailing-whitespace :which-key "delete trailing whitespace")
   "j" '(dumb-jump-hydra/body :which-key "dumb jump")
   "z" '(text-scale-hydra/body :which-key "text scale")
+  "f" '(flyspell-hydra/body :which-key "flyspell")
   "0" '(delete-window :which-key "delete window")
   "1" '(delete-other-windows :which-key "delete other windows")
   "2" '(split-window-below :which-key "split window below")
