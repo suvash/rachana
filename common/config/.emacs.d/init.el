@@ -473,7 +473,8 @@
 ;; Nix mode
 (use-package nix-mode
   :mode "\\.nix\\'"
-  :hook (before-save . nix-format-buffer))
+  :hook
+  (before-save . (lambda () (add-hook 'before-save-hook 'nix-format-buffer nil 'local))))
 
 (use-package yaml-mode
   :mode ("\\.ya?ml\\'" . yaml-mode))
