@@ -1,3 +1,5 @@
 var/
 etc/
 elpa/
+
+custom.el
