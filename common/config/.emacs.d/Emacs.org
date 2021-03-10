@@ -226,9 +226,8 @@
 (use-package flyspell
   :init
   (setq ispell-dictionary "english")
-  :hook
-  (prog-mode . flyspell-prog-mode)
-  (text-mode . flyspell-mode))
+  :hook ((prog-mode . flyspell-prog-mode)
+         (text-mode . flyspell-mode)))
 
 (defhydra flyspell-hydra (:timeout 4)
   "scale text"
