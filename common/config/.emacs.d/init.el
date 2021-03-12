@@ -131,6 +131,8 @@
   :init
   (setq company-idle-delay 0.3
         company-show-numbers t
+        company-minimum-prefix-length 2
+        company-tooltip-limit 10
         company-tooltip-align-annotations t)
   :hook (after-init . global-company-mode))
 
@@ -473,7 +475,7 @@
 (use-package nix-mode
   :mode "\\.nix\\'"
   :hook
-  (before-save . (lambda () (add-hook 'before-save-hook 'nix-format-buffer nil 'local))))
+  (before-save . (lambda () (add-hook 'before-save-hook 'nix-format-buffer nil t))))
 
 (use-package yaml-mode
   :mode ("\\.ya?ml\\'" . yaml-mode))
@@ -498,6 +500,7 @@
 (suv/define-leader-keys
   "SPC" '(other-window :which-key "other window")
   "." '(dired-jump :which-key "dired jump")
+  ";" '(comment-or-uncomment-region :which-key "un/comment region")
   "b" '(counsel-switch-buffer-other-window :which-key "switch to buffer")
   "k" '(kill-this-buffer :which-key "kill this buffer")
   "w" '(delete-trailing-whitespace :which-key "delete trailing whitespace")
