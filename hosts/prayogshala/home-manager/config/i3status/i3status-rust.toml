@@ -9,7 +9,14 @@ format = "{running}/{total}"
 [[block]]
 block = "disk_space"
 path = "/"
-alias = "/"
+alias = ""
+info_type = "available"
+unit = "GiB"
+
+[[block]]
+block = "disk_space"
+path = "/workspace"
+alias = ""
 info_type = "available"
 unit = "GiB"
 
@@ -40,7 +47,7 @@ format = "{volume}% {output_name}"
 block = "time"
 interval = 60
 timezone = "Asia/Kathmandu"
-format = "%I:%M%P NP"
+format = "%I:%M%P NE"
 
 [[block]]
 block = "time"
