@@ -132,9 +132,7 @@
     noto-fonts-extra
     lohit-fonts.devanagari
     lohit-fonts.nepali
-    font-awesome_4
-    font-awesome
-    powerline-fonts
+    nerdfonts
     emacs-all-the-icons-fonts
   ];
 
