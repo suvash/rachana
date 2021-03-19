@@ -133,6 +133,7 @@ with pkgs;
   nixfmt
   yamllint
   ispell
+  shellcheck
 
   # Communication
   slack

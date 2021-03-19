@@ -311,6 +311,8 @@ in {
       ./scripts/configure-slimblade-trackball.sh;
     home.file.".local/bin/configure-kensington-advantage.sh".source =
       ./scripts/configure-kensington-advantage.sh;
+    home.file.".local/bin/toggle-xfce-dark-light-theme.sh".source =
+      ./scripts/toggle-xfce-dark-light-theme.sh;
 
     home.file.".screenshots/.keep".text = "";
 
@@ -361,6 +363,7 @@ in {
             "exec feh --bg-tile --no-fehbg --randomize ~/.wallpapers/tiled";
           "Mod4+ctrl+v" = "exec CM_LAUNCHER=rofi clipmenu";
           "Mod4+ctrl+k" = "exec ~/.local/bin/configure-kensington-advantage.sh";
+          "Mod4+ctrl+t" = "exec ~/.local/bin/toggle-xfce-dark-light-theme.sh";
           "Mod4+ctrl+3" = "exec flameshot full --path ~/.screenshots";
           "Mod4+ctrl+4" = "exec flameshot gui --path ~/.screenshots";
 
