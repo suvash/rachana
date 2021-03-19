@@ -258,10 +258,6 @@ in {
         ta = "tmux attach";
         tls = "tmux list-sessions";
 
-        # xfce things
-        xfl = "xfconf-query -c xsettings -p /Net/ThemeName -s 'Adwaita'";
-        xfd = "xfconf-query -c xsettings -p /Net/ThemeName -s 'Adwaita-dark'";
-
         # terminal themes
         td = "base16-onedark";
         tl = "base16-one-light";
