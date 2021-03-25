@@ -63,9 +63,6 @@
 
   # LOCALISATION ====================================================================
 
-  # Set your time zone.
-  time.timeZone = "${config.settings.timezone}";
-
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -74,6 +71,14 @@
       ibus.engines = with pkgs.ibus-engines; [ m17n ];
     };
   };
+
+  # TIME ============================================================================
+
+  # Set your time zone.
+  time.timeZone = "${config.settings.timezone}";
+
+  # Use chrony for ntp sync
+  services.chrony.enable = true;
 
   # PACKAGES ========================================================================
 
