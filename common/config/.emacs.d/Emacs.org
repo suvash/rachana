@@ -720,6 +720,7 @@
   "SPC" '(other-window :which-key "other window")
   "." '(dired-jump :which-key "dired jump")
   ";" '(comment-or-uncomment-region :which-key "un/comment region")
+  "s" '(eshell :which-key "eshell")
   "b" '(counsel-switch-buffer-other-window :which-key "switch to buffer")
   "k" '(kill-this-buffer :which-key "kill this buffer")
   "w" '(delete-trailing-whitespace :which-key "delete trailing whitespace")
