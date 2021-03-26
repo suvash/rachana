@@ -472,6 +472,9 @@
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
 ;; Nix mode
+(use-package lsp-mode)
+
+;; Nix mode
 (use-package nix-mode
   :mode "\\.nix\\'"
   :hook
@@ -495,6 +498,11 @@
 ;; Blacken formatting
 (use-package blacken
   :hook (python-mode . blacken-mode))
+
+;; Rustic
+(use-package rustic
+  :config
+  (setq rustic-format-on-save t))
 
 ;; main leader keys
 (suv/define-leader-keys

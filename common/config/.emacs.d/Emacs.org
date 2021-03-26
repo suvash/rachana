@@ -666,6 +666,13 @@
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 #+end_src
 
+** LSP Mode
+
+#+begin_src emacs-lisp
+;; Nix mode
+(use-package lsp-mode)
+#+end_src
+
 ** Nix files
 
 #+begin_src emacs-lisp
@@ -709,6 +716,15 @@
 ;; Blacken formatting
 (use-package blacken
   :hook (python-mode . blacken-mode))
+#+end_src
+
+** Rust files
+
+#+begin_src emacs-lisp
+;; Rustic
+(use-package rustic
+  :config
+  (setq rustic-format-on-save t))
 #+end_src
 
 * Leader keys
