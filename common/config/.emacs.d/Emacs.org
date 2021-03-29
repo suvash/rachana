@@ -191,6 +191,14 @@
   :init (smartparens-global-mode 1))
 #+end_src
 
+** Direnv (envrc) integration
+
+#+begin_src emacs-lisp
+;; direnv integration
+(use-package envrc
+  :init (envrc-global-mode))
+#+end_src
+
 ** Company mode
 
 #+begin_src emacs-lisp
@@ -500,14 +508,6 @@
   "pd" '(projectile-dired :which-key "load dired")
   "pr" '(counsel-projectile-rg :which-key "search(ripgrep)")
   "pk" '(projectile-kill-buffers :which-key "kill buffers"))
-#+end_src
-
-** Direnv (envrc) integration
-
-#+begin_src emacs-lisp
-;; direnv integration
-(use-package envrc
-  :init (envrc-global-mode))
 #+end_src
 
 ** Deadgrep (via ripgrep) search

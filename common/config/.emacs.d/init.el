@@ -126,6 +126,10 @@
 (use-package smartparens
   :init (smartparens-global-mode 1))
 
+;; direnv integration
+(use-package envrc
+  :init (envrc-global-mode))
+
 ;; use company for completion suggestions
 (use-package company
   :init
@@ -356,10 +360,6 @@
   "pd" '(projectile-dired :which-key "load dired")
   "pr" '(counsel-projectile-rg :which-key "search(ripgrep)")
   "pk" '(projectile-kill-buffers :which-key "kill buffers"))
-
-;; direnv integration
-(use-package envrc
-  :init (envrc-global-mode))
 
 ;; for search using ripgrep
 (use-package deadgrep)
