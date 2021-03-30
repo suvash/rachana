@@ -497,7 +497,11 @@
 
 ;; Blacken formatting
 (use-package blacken
-  :hook (python-mode . blacken-mode))
+  :hook (python-mode . blacken-mode)
+  :config
+  (setq blacken-skip-string-normalization t
+        blacken-line-length 100
+        blacken-allow-py36 t))
 
 ;; Rustic
 (use-package rustic
