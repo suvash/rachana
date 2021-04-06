@@ -65,6 +65,7 @@ with pkgs;
   iotop
   iftop
   dfc
+  unstable.du-dust
   dstat
   powertop
   ncdu
