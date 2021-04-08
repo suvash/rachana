@@ -89,6 +89,7 @@ with pkgs;
 
   # Terminals / shells
   kitty
+  konsole
   parallel
   mosh
   fasd
