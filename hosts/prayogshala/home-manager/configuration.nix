@@ -180,11 +180,6 @@ in {
       };
     };
 
-    programs.autojump = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-
     programs.fish = {
       enable = true;
       interactiveShellInit = ''
