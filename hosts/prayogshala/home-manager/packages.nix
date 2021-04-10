@@ -57,6 +57,7 @@ with pkgs;
   lshw
   hwinfo
   hardinfo
+  lm_sensors
 
   # System monitoring
   acpi

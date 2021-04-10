@@ -27,6 +27,12 @@ format_mem = "{Mug}GB ({Mup}%)"
 format_swap = "{SUp}%"
 
 [[block]]
+block = "temperature"
+collapsed = false
+interval = 5
+format = "{max} • {average} • {min} °C"
+
+[[block]]
 block = "cpu"
 interval = 1
 format = "{barchart} {utilization}%"
