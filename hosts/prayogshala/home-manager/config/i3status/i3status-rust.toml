@@ -51,12 +51,12 @@ format = "{volume}% {output_name}"
 
 [[block]]
 block = "time"
-interval = 60
+interval = 5
 timezone = "Asia/Kathmandu"
 format = "%I:%M%P NE"
 
 [[block]]
 block = "time"
-interval = 60
+interval = 5
 timezone = "Europe/Stockholm"
 format = "W%W %a %m/%d %H:%M SE"
