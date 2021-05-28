@@ -144,24 +144,6 @@
 (use-package origami
   :init (global-origami-mode 1))
 
-;; use flycheck for all kinds of syntax completion
-(use-package flycheck
-  :init (global-flycheck-mode 1))
-
-;; use flyspell for spellchecks
-(use-package flyspell
-  :init
-  (setq ispell-dictionary "english")
-  :hook ((prog-mode . flyspell-prog-mode)
-         (text-mode . flyspell-mode)))
-
-(defhydra flyspell-hydra (:timeout 4)
-  "scale text"
-  ("b" flyspell-buffer "flyspell buffer")
-  ("n" flyspell-goto-next-error "go to next error")
-  ("f" flyspell-correct-word-before-point "correct word before point")
-  ("RET" nil "done" :exit t))
-
 ;; dim the other buffer
 (use-package dimmer
   :init (dimmer-mode 1))
@@ -322,6 +304,24 @@
   "t"  '(:ignore t :which-key "load light/dark theme")
   "tl" '(suv/load-light-theme :which-key "Light theme")
   "td" '(suv/load-dark-theme :which-key "Dark theme"))
+
+;; use flycheck for all kinds of syntax completion
+(use-package flycheck
+  :init (global-flycheck-mode 1))
+
+;; use flyspell for spellchecks
+(use-package flyspell
+  :init
+  (setq ispell-dictionary "english")
+  :hook ((prog-mode . flyspell-prog-mode)
+         (text-mode . flyspell-mode)))
+
+(defhydra flyspell-hydra (:timeout 4)
+  "spell check"
+  ("b" flyspell-buffer "flyspell buffer")
+  ("n" flyspell-goto-next-error "go to next error")
+  ("f" flyspell-correct-word-before-point "correct word before point")
+  ("RET" nil "done" :exit t))
 
 (use-package dumb-jump)
 

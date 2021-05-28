@@ -221,32 +221,6 @@
   :init (global-origami-mode 1))
 #+end_src
 
-** Flycheck
-
-#+begin_src emacs-lisp
-;; use flycheck for all kinds of syntax completion
-(use-package flycheck
-  :init (global-flycheck-mode 1))
-#+end_src
-
-** Flyspell
-
-#+begin_src emacs-lisp
-;; use flyspell for spellchecks
-(use-package flyspell
-  :init
-  (setq ispell-dictionary "english")
-  :hook ((prog-mode . flyspell-prog-mode)
-         (text-mode . flyspell-mode)))
-
-(defhydra flyspell-hydra (:timeout 4)
-  "scale text"
-  ("b" flyspell-buffer "flyspell buffer")
-  ("n" flyspell-goto-next-error "go to next error")
-  ("f" flyspell-correct-word-before-point "correct word before point")
-  ("RET" nil "done" :exit t))
-#+end_src
-
 ** Dimmer
 
 #+begin_src emacs-lisp
@@ -457,6 +431,32 @@
   "t"  '(:ignore t :which-key "load light/dark theme")
   "tl" '(suv/load-light-theme :which-key "Light theme")
   "td" '(suv/load-dark-theme :which-key "Dark theme"))
+#+end_src
+
+** Flycheck
+
+#+begin_src emacs-lisp
+;; use flycheck for all kinds of syntax completion
+(use-package flycheck
+  :init (global-flycheck-mode 1))
+#+end_src
+
+** Flyspell
+
+#+begin_src emacs-lisp
+;; use flyspell for spellchecks
+(use-package flyspell
+  :init
+  (setq ispell-dictionary "english")
+  :hook ((prog-mode . flyspell-prog-mode)
+         (text-mode . flyspell-mode)))
+
+(defhydra flyspell-hydra (:timeout 4)
+  "spell check"
+  ("b" flyspell-buffer "flyspell buffer")
+  ("n" flyspell-goto-next-error "go to next error")
+  ("f" flyspell-correct-word-before-point "correct word before point")
+  ("RET" nil "done" :exit t))
 #+end_src
 
 ** Dumb jump
