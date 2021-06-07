@@ -503,6 +503,14 @@
         blacken-line-length 100
         blacken-allow-py36 t))
 
+;; Ruby mode
+(use-package ruby-mode
+  :mode (("\\.rb\\'"       . ruby-mode)
+         ("\\.gemspec\\'"  . ruby-mode)
+         ("\\.rake\\'"     . ruby-mode)
+         ("Rakefile\\'"    . ruby-mode)
+         ("Gemfile\\'"     . ruby-mode)))
+
 ;; Rustic
 (use-package rustic
   :config

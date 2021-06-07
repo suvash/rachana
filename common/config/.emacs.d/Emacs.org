@@ -722,6 +722,18 @@
         blacken-allow-py36 t))
 #+end_src
 
+** Ruby files
+
+#+begin_src emacs-lisp
+;; Ruby mode
+(use-package ruby-mode
+  :mode (("\\.rb\\'"       . ruby-mode)
+         ("\\.gemspec\\'"  . ruby-mode)
+         ("\\.rake\\'"     . ruby-mode)
+         ("Rakefile\\'"    . ruby-mode)
+         ("Gemfile\\'"     . ruby-mode)))
+#+end_src
+
 ** Rust files
 
 #+begin_src emacs-lisp
