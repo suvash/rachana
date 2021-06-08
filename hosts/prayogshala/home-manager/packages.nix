@@ -117,6 +117,8 @@ with pkgs;
   packer
   kubectl
   kubectx
+  stern
+  k9s
 
   # Docker
   dive
