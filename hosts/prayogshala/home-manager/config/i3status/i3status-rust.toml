@@ -25,15 +25,25 @@ format_mem = "{mem_used;G} {mem_used_percents}"
 format_swap = "{swap_used;G} {swap_used_percents}"
 
 [[block]]
-block = "temperature"
-collapsed = false
-interval = 5
-format = "{min} • {max} C"
+block = "nvidia_gpu"
+label = ""
+show_utilization = true
+show_memory = true
+show_temperature = true
+show_fan_speed = true
+show_clocks = true
+show_power_draw = true
 
 [[block]]
 block = "cpu"
 interval = 1
 format = "{barchart} {utilization}"
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 5
+format = "{min} • {max} C"
 
 [[block]]
 block = "net"
