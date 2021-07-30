@@ -20,6 +20,9 @@ with pkgs;
   sonic-visualiser
   audacity
 
+  # Nix tools
+  nix-prefetch-git
+
   # Pulseaudio tools
   paprefs
   ncpamixer
