@@ -15,6 +15,11 @@ with pkgs;
   # Media
   vlc
 
+  # Audio
+  vcv-rack
+  sonic-visualiser
+  audacity
+
   # Pulseaudio tools
   paprefs
   ncpamixer
