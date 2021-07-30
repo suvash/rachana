@@ -26,6 +26,7 @@ with pkgs;
   # Graphics tools
   glxinfo
   nvtop
+  unigine-valley
 
   # Pulseaudio tools
   paprefs
