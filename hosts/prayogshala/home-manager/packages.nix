@@ -23,6 +23,10 @@ with pkgs;
   # Nix tools
   nix-prefetch-git
 
+  # Graphics tools
+  glxinfo
+  nvtop
+
   # Pulseaudio tools
   paprefs
   ncpamixer
