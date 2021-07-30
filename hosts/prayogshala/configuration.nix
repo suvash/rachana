@@ -10,8 +10,14 @@
     # home manager settings
     ./home-manager/configuration.nix
 
-    # other modules
-    ./intel_cpu_gpu.nix
+    # intel
+    ./intel_cpu.nix
+    # ./intel_gpu.nix
+
+    # nvidia
+    ./nvidia_gpu.nix
+
+    # others
     ./yubikey.nix
     ./tailscale.nix
   ];
