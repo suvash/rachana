@@ -11,6 +11,7 @@ with pkgs;
   # Git family
   tig
   gitAndTools.diff-so-fancy
+  git-lfs
 
   # Media
   vlc
