@@ -319,7 +319,11 @@ in {
       enable = true;
       config = {
         modifier = "Mod4";
-        fonts = [ "Ubuntu Mono 14" ];
+        fonts = {
+          names = [ "Ubuntu Mono" ];
+          size = 14.0;
+          style = "";
+        };
 
         keybindings = lib.mkOptionDefault {
           ## Missing
@@ -373,7 +377,11 @@ in {
         };
 
         bars = [{
-          fonts = [ "Ubuntu Mono, FontAwesome 14" ];
+          fonts = {
+            names = [ "Ubuntu Mono" "FontAwesome" ];
+            size = 14.0;
+            style = "";
+          };
           statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${
               ./config/i3status/i3status-rust.toml
             }";
