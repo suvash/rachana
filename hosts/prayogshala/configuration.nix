@@ -17,6 +17,9 @@
     # nvidia
     ./nvidia_gpu.nix
 
+    # virtualisation
+    ./docker.nix
+
     # others
     ./yubikey.nix
     ./tailscale.nix
@@ -163,16 +166,6 @@
   };
 
   # VIRTUALISATION ==================================================================
-
-  # Docker
-  virtualisation.docker.enable = true;
-  virtualisation.docker.enableOnBoot = true;
-
-  # Nvidia Docker
-  virtualisation.docker.enableNvidia = true;
-  # libnvidia-container does not support cgroups v2
-  # https://github.com/NVIDIA/nvidia-docker/issues/1447
-  systemd.enableUnifiedCgroupHierarchy = false;
 
   # Podman
   virtualisation.podman.enable = false;
