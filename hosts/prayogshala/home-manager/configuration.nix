@@ -284,17 +284,6 @@ in {
       }];
     };
 
-    programs.git = {
-      enable = true;
-      userName = "${config.settings.fullname}";
-      userEmail = "${config.settings.email}";
-      ignores = [ ".tmp/" ];
-      signing = {
-        key = "${config.settings.gpgkey}";
-        signByDefault = true;
-      };
-    };
-
     home.sessionPath = [ "/home/${config.settings.username}/.local/bin" ];
 
     home.file.".local/bin/configure-slimblade-trackball.sh".source =

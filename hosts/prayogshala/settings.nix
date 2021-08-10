@@ -15,10 +15,6 @@
         default = "suvash@gmail.com";
         type = with lib.types; uniq str;
       };
-      gpgkey = lib.mkOption {
-        default = "0x943FDA115E73D2B2";
-        type = with lib.types; uniq str;
-      };
       hostname = lib.mkOption {
         default = "prayogshala";
         type = with lib.types; uniq str;

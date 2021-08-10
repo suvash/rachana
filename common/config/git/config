@@ -6,3 +6,8 @@
 	gpgsign = true
 [tag]
 	gpgsign = true
+[core]
+	editor = vim
+	excludesfiles = ~/.config/git/GITIGNORE
+[init]
+	defaultBranch = main
