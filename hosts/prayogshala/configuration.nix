@@ -198,6 +198,10 @@
     defaultSession = "xfce+i3";
     lightdm = {
       enable = true;
+      # https://github.com/NixOS/nixpkgs/issues/108289#issuecomment-758263467
+      extraSeatDefaults = ''
+        user-session = xfce+i3
+      '';
       greeters.mini = {
         enable = true;
         user = "${config.settings.username}";
