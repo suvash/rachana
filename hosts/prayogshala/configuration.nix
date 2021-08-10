@@ -17,6 +17,9 @@
     # nvidia
     ./nvidia_gpu.nix
 
+    # hidpi
+    ./hidpi.nix
+
     # virtualisation
     ./docker.nix
 
