@@ -118,7 +118,7 @@
   # ENVIRONMENT =====================================================================
 
   # Install packages
-  environment.systemPackages = with pkgs; [ nano wget ];
+  environment.systemPackages = with pkgs; [ nano wget git ];
 
   # Env vars
   environment.variables = {
