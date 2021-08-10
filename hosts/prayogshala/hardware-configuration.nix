@@ -14,25 +14,23 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/ac0a1d96-cd51-453a-8c00-851831a25843";
+    { device = "/dev/disk/by-uuid/76d30960-f9f1-408d-b856-8c056258d1ca";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/FE2A-7234";
+    { device = "/dev/disk/by-uuid/6460-23F7";
       fsType = "vfat";
     };
 
   fileSystems."/workspace" =
-    { device = "/dev/disk/by-uuid/f14cbdfb-7fa4-4c51-9105-fa8d1a9cea99";
+    { device = "/dev/disk/by-uuid/dabad67f-ac7b-4ba3-a018-803c49b6c84f";
       fsType = "ext4";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/b9cfec66-032a-4748-a6f7-2510a93fd6fa"; }
+    [ { device = "/dev/disk/by-uuid/86019065-c7bc-413e-bb09-295f98c7636f"; }
     ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  # high-resolution display
-  hardware.video.hidpi.enable = lib.mkDefault true;
 }
