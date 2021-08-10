@@ -9,13 +9,13 @@ format = "{running}/{total}"
 [[block]]
 block = "disk_space"
 path = "/"
-format =" {used}"
+format =" {available}"
 unit = "GB"
 
 [[block]]
 block = "disk_space"
 path = "/workspace"
-format =" {used}"
+format =" {available}"
 unit = "GB"
 
 [[block]]
