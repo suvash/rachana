@@ -1,0 +1,8 @@
+[user]
+	name = Suvash Thapaliya
+	email = suvash@gmail.com
+	signingkey = 5E73D2B2
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
