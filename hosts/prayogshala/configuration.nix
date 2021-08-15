@@ -40,7 +40,18 @@
   boot.loader.grub.version = 2;
   boot.loader.grub.devices = [ "nodev" ];
   boot.loader.grub.efiSupport = true;
-  boot.loader.grub.useOSProber = true;
+  # --set-root being the /dev/disk/by-uuid/ of EFI partition
+  boot.loader.grub.extraEntries = ''
+    menuentry "Windows" {
+      insmod part_gpt
+      insmod fat
+      insmod search_fs_uuid
+      insmod chain
+      search --fs-uuid --set=root 2C7B-C51F
+      chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+      insmod part_gpt
+    }
+  '';
 
   # Clean tmp dir on boot
   boot.cleanTmpDir = true;
@@ -88,6 +99,9 @@
 
   # Set your time zone.
   time.timeZone = "${config.settings.timezone}";
+
+  # Set hardware clock to local time
+  time.hardwareClockInLocalTime = true;
 
   # Use chrony for ntp sync
   services.chrony.enable = true;
