@@ -15,7 +15,7 @@ else
     new_theme=$current_theme
 fi
 
-CMD="xfconf-query -c xsettings -p /Net/ThemeName -s $new_theme"
+CMD="xfconf-query -c xsettings -p '/Net/ThemeName' -s $new_theme"
 SUBJECT="Toggling dark/light theme"
 BODY="$current_theme ➡️ $new_theme"
 
