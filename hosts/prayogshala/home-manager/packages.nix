@@ -73,6 +73,7 @@ with pkgs;
   hwinfo
   hardinfo
   lm_sensors
+  lsof
 
   # System monitoring
   acpi
@@ -81,6 +82,7 @@ with pkgs;
   iotop
   iftop
   dfc
+  duf
   unstable.du-dust
   dstat
   powertop
@@ -99,6 +101,7 @@ with pkgs;
 
   # Network
   traceroute
+  gping
   nmap
   speedtest-cli
   bandwhich
