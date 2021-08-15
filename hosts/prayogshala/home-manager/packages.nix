@@ -12,6 +12,7 @@ with pkgs;
   tig
   gitAndTools.diff-so-fancy
   git-lfs
+  delta
 
   # Media
   vlc

@@ -11,3 +11,9 @@
 	excludesfiles = ~/.config/git/GITIGNORE
 [init]
 	defaultBranch = main
+[pager]
+	diff = delta
+[delta]
+	side-by-side = true
+[diff]
+	colorMoved = default
