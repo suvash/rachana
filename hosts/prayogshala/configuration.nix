@@ -281,7 +281,7 @@
   users.users.${config.settings.username} = {
     isNormalUser = true;
     description = "${config.settings.fullname}";
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "wheel" "docker" "audio" ];
     shell = pkgs.fish;
   };
 
