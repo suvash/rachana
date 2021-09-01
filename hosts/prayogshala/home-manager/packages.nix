@@ -27,7 +27,7 @@ with pkgs;
 
   # Graphics tools
   glxinfo
-  nvtop
+  unstable.nvtop
   unigine-valley
 
   # Pulseaudio tools
@@ -78,6 +78,7 @@ with pkgs;
   # System monitoring
   acpi
   htop
+  bottom
   procs
   iotop
   iftop
