@@ -3,9 +3,9 @@
 	email = suvash@gmail.com
 	signingkey = 5E73D2B2
 [commit]
-	gpgsign = true
+	gpgsign = false
 [tag]
-	gpgsign = true
+	gpgsign = false
 [core]
 	editor = vim
 	excludesfiles = ~/.config/git/GITIGNORE
