@@ -127,8 +127,8 @@
   :init (smartparens-global-mode 1))
 
 ;; direnv integration
-(use-package envrc
-  :init (envrc-global-mode))
+;; (use-package envrc
+;;   :init (envrc-global-mode))
 
 ;; use company for completion suggestions
 (use-package company
