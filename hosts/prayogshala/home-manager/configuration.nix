@@ -261,12 +261,15 @@ in {
 
         # monitor
         p1 = "ping 1.1.1.1";
+        pcf = "ping cfl.re";
+        pgg = "ping goo.gl";
         ports = "netstat -tunap";
 
         # other
         du = "du -chs *";
         fonts = "fc-list : family";
         httpserve = "python -m http.server 7531";
+        kssh = "kitty +kitten ssh";
       };
       functions = {
         cleansshhosts = ''
