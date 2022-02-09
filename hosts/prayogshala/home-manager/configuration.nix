@@ -3,8 +3,8 @@
 let
   home-manager = builtins.fetchGit {
     url = "https://github.com/nix-community/home-manager.git";
-    rev = "148d85ee8303444fb0116943787aa0b1b25f94df";
-    ref = "release-21.05";
+    rev = "2860d7e3bb350f18f7477858f3513f9798896831";
+    ref = "release-21.11";
   };
 in {
   imports = [
@@ -162,7 +162,7 @@ in {
 
     programs.gh = {
       enable = true;
-      gitProtocol = "ssh";
+      settings = { git_protocol = "ssh"; };
     };
 
     programs.rofi = {
