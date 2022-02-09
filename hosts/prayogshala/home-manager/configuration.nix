@@ -305,6 +305,8 @@ in {
 
     home.file.".tmux.conf".source = ../../../common/config/tmux/tmux.conf;
 
+    home.file.".digrc".source = ../../../common/config/dig/digrc;
+
     xdg.configFile."nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
     xsession.windowManager.i3 = {
