@@ -391,8 +391,8 @@ in {
       };
 
       extraConfig = ''
-        exec --no-startup-id ~/.local/bin/configure-slimblade-trackball.sh
-        exec --no-startup-id ~/.local/bin/configure-kensington-advantage.sh
+        exec --no-startup-id ~/.local/bin/configure-expert-wireless.sh
+        exec --no-startup-id ~/.local/bin/configure-kinesis-advantage.sh
       '';
     };
   };
