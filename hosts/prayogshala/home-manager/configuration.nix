@@ -289,10 +289,12 @@ in {
 
     home.sessionPath = [ "/home/${config.settings.username}/.local/bin" ];
 
+    home.file.".local/bin/configure-expert-wireless.sh".source =
+      ./scripts/configure-kensington-expert-wireless.sh;
     home.file.".local/bin/configure-slimblade-trackball.sh".source =
-      ./scripts/configure-slimblade-trackball.sh;
-    home.file.".local/bin/configure-kensington-advantage.sh".source =
-      ./scripts/configure-kensington-advantage.sh;
+      ./scripts/configure-kensington-slimblade-trackball.sh;
+    home.file.".local/bin/configure-advantage.sh".source =
+      ./scripts/configure-kinesis-advantage.sh;
     home.file.".local/bin/toggle-xfce-dark-light-theme.sh".source =
       ./scripts/toggle-xfce-dark-light-theme.sh;
 
