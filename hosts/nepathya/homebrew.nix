@@ -47,7 +47,7 @@
    ];
 
    extraConfig = ''
-     cask_args appdir: "~/Casks", require_sha: true
+     cask_args appdir: "~/Applications/Casks/", require_sha: true
    '';
 
   };
