@@ -36,6 +36,7 @@
 
    casks = [
      "emacs"
+     "iterm2"
      "karabiner-elements"
      "keepingyouawake"
      "zoom"

@@ -21,6 +21,13 @@ if [ ! -L "$HOME/.config/git" ]; then
   ln -sfnv "$HOME/Developer/rachana/common/config/git" "$HOME/.config/git"
 fi
 
+echo "-- Setting up iTerm2 configuration symlink"
+if [ ! -L "$HOME/.config/iterm2/com.googlecode.iterm2.plist" ]; then
+  mkdir -p "$HOME/.config/iterm2"
+  mv "$HOME/.config/iterm2/com.googlecode.iterm2.plist" "$HOME/.config/iterm2/com.googlecode.iterm2.plist.orig"
+  ln -sfnv "$HOME/Developer/rachana/common/config/iterm2/com.googlecode.iterm2.plist" "$HOME/.config/iterm2/com.googlecode.iterm2.plist"
+fi
+
 echo "-- Cloning down base16-shell symlink"
 if [ ! -d "$HOME/.config/base16-shell" ]; then
   mkdir -p "$HOME/.config"
