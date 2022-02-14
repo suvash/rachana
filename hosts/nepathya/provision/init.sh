@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+
+echo "-- Setting up darwin-configuration symlink"
+if [ ! -L "$HOME/.nixpkgs/darwin-configuration.nix" ]; then
+  mkdir -p "$HOME/.nixpkgs/"
+  mv "$HOME/.nixpkgs/darwin-configuration.nix" "$HOME/.nixpkgs/darwin-configuration.nix.orig"
+  ln -sfnv "$HOME/Developer/rachana/hosts/nepathya/configuration.nix" "$HOME/.nixpkgs/darwin-configuration.nix"
+fi
+
+echo "-- Setting up emacs configuration symlink"
+if [ ! -L "$HOME/.emacs.d" ]; then
+  mv "$HOME/.emacs.d" "$HOME/.emacs.d.orig"
+  ln -sfnv "$HOME/Developer/rachana/common/config/.emacs.d" "$HOME/.emacs.d"
+fi
+
+echo "-- Setting up git configuration symlink"
+if [ ! -L "$HOME/.config/git" ]; then
+  mkdir -p "$HOME/.config"
+  mv "$HOME/.config/git" "$HOME/.config/git.orig"
+  ln -sfnv "$HOME/Developer/rachana/common/config/git" "$HOME/.config/git"
+fi
+
+echo "-- Cloning down base16-shell symlink"
+if [ ! -d "$HOME/.config/base16-shell" ]; then
+  mkdir -p "$HOME/.config"
+  git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+fi
