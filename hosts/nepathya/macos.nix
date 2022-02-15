@@ -4,6 +4,35 @@
   system = {
     defaults = {
 
+      LaunchServices = {
+        LSQuarantine = true;
+      };
+
+      ".GlobalPreferences" = {
+        "com.apple.sound.beep.sound" = "/System/Library/Sounds/Sosumi.aiff";
+      };
+
+      dock = {
+        autohide = true;
+        autohide-delay = "0.0";
+        autohide-time-modifier = "0.0";
+        dashboard-in-overlay = true;
+        enable-spring-load-actions-on-all-items = true;
+        expose-animation-duration = "0.1";
+        expose-group-by-app = false;
+        launchanim = false;
+        mineffect = "scale";
+        minimize-to-application = true;
+        mouse-over-hilite-stack = true;
+        mru-spaces = false;
+        orientation = "bottom";
+        show-process-indicators = true;
+        showhidden = true;
+        show-recents = false;
+        static-only = true;
+        tilesize = 40;
+      };
+
       NSGlobalDomain = {
         AppleEnableMouseSwipeNavigateWithScrolls = true;
         AppleEnableSwipeNavigateWithScrolls = true;
@@ -33,7 +62,7 @@
         PMPrintingExpandedStateForPrint2 = true;
         "com.apple.keyboard.fnState" = false;
         "com.apple.mouse.tapBehavior" = 1;
-        "com.apple.sound.beep.volume" = "0.6065307"; # 50%
+        "com.apple.sound.beep.volume" = "0.7788008"; # 75%
         "com.apple.sound.beep.feedback" = 1;
         "com.apple.trackpad.enableSecondaryClick" = true;
         "com.apple.trackpad.trackpadCornerClickBehavior" = null;
