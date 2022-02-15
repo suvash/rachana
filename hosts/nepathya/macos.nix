@@ -33,6 +33,14 @@
         tilesize = 40;
       };
 
+      finder = {
+        AppleShowAllExtensions = true;
+        CreateDesktop = false;
+        QuitMenuItem = true;
+        "_FXShowPosixPathInTitle" = true;
+        FXEnableExtensionChangeWarning = false;
+      };
+
       NSGlobalDomain = {
         AppleEnableMouseSwipeNavigateWithScrolls = true;
         AppleEnableSwipeNavigateWithScrolls = true;
