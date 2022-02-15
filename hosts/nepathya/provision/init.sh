@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+mkdir -p $HOME/.config
+mkdir -p $HOME/.screenshots
 
 echo "-- Setting up darwin-configuration symlink"
 if [ ! -L "$HOME/.nixpkgs/darwin-configuration.nix" ]; then
@@ -16,7 +18,6 @@ fi
 
 echo "-- Setting up git configuration symlink"
 if [ ! -L "$HOME/.config/git" ]; then
-  mkdir -p "$HOME/.config"
   mv "$HOME/.config/git" "$HOME/.config/git.orig"
   ln -sfnv "$HOME/Developer/rachana/common/config/git" "$HOME/.config/git"
 fi

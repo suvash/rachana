@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./settings.nix
+  ];
+
   system = {
     defaults = {
 
@@ -10,6 +14,20 @@
 
       ".GlobalPreferences" = {
         "com.apple.sound.beep.sound" = "/System/Library/Sounds/Sosumi.aiff";
+      };
+
+      loginwindow = {
+        SHOWFULLNAME = false;
+        autoLoginUser = null;
+        GuestEnabled = false;
+        LoginwindowText = "${config.settings.computername}";
+        ShutDownDisabled = false;
+        SleepDisabled = false;
+        RestartDisabled = false;
+        ShutDownDisabledWhileLoggedIn = false;
+        PowerOffDisabledWhileLoggedIn = false;
+        RestartDisabledWhileLoggedIn = false;
+        DisableConsoleAccess = false;
       };
 
       dock = {
@@ -41,6 +59,36 @@
         FXEnableExtensionChangeWarning = false;
       };
 
+      screencapture = {
+        location = "~/.screenshots";
+        disable-shadow = true;
+      };
+
+      smb = {
+        NetBIOSName = "${config.settings.hostname}";
+        ServerDescription = "${config.settings.hostname}";
+      };
+
+      spaces = {
+        spans-displays = false;
+      };
+
+      trackpad = {
+        Clicking = true;
+        Dragging = true;
+        TrackpadRightClick = true;
+        TrackpadThreeFingerDrag = true;
+        ActuationStrength = 1;
+        FirstClickThreshold = 0;
+        SecondClickThreshold = 1;
+      };
+
+      # universalaccess = {
+      #   reduceTransparency = true;
+      #   closeViewScrollWheelToggle = true;
+      #   closeViewZoomFollowsFocus = true;
+      # };
+
       NSGlobalDomain = {
         AppleEnableMouseSwipeNavigateWithScrolls = true;
         AppleEnableSwipeNavigateWithScrolls = true;
@@ -69,12 +117,13 @@
         PMPrintingExpandedStateForPrint = true;
         PMPrintingExpandedStateForPrint2 = true;
         "com.apple.keyboard.fnState" = false;
+        # would be nice to merge this in trackpad
         "com.apple.mouse.tapBehavior" = 1;
-        "com.apple.sound.beep.volume" = "0.7788008"; # 75%
-        "com.apple.sound.beep.feedback" = 1;
         "com.apple.trackpad.enableSecondaryClick" = true;
         "com.apple.trackpad.trackpadCornerClickBehavior" = null;
         "com.apple.trackpad.scaling" = "1";
+        "com.apple.sound.beep.volume" = "0.7788008"; # 75%
+        "com.apple.sound.beep.feedback" = 1;
         "com.apple.springing.enabled" = true;
         "com.apple.springing.delay" = "0.0";
         "com.apple.swipescrolldirection" = true;
