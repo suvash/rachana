@@ -167,6 +167,7 @@
       (process-send-string proc text)
       (process-send-eof proc))))
 
+
 (defun suv/remap-macos-modifier-keys ()
   ;;(setq mac-function-modifier 'hyper)
   ;;(setq mac-control-modifier 'control)
@@ -199,7 +200,7 @@
 ;; setup counsel
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
-	 ("C-x b" . counsel-switch-buffer)
+         ("C-x b" . counsel-switch-buffer)
          ("C-x C-f" . counsel-find-file)
          ("C-h v" . counsel-describe-variable)
          ("C-h f" . counsel-describe-function)
@@ -216,7 +217,7 @@
   :config
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t
-	ivy-count-format "%d/%d "))
+        ivy-count-format "%d/%d "))
 
 ;; setup ivy-rich
 (use-package ivy-rich
