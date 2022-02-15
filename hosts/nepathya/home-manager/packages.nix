@@ -12,6 +12,7 @@ with pkgs;
 
   # Terminals / shells
   fasd
+  tmux
 
   # Bling
   cmatrix
