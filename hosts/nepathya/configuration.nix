@@ -57,8 +57,6 @@
 
   # System level packages
   environment.systemPackages = with pkgs; [
-    wget
-    gnupg
     terminal-notifier
   ];
 
