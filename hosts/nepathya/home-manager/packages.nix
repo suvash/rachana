@@ -52,6 +52,7 @@ with pkgs;
   dfc
   duf
   ncdu
+  du-dust
 
   # Network tools
   iftop
@@ -61,6 +62,7 @@ with pkgs;
   ngrep
   gping
   nmap
+  wakeonlan
 
   # Cloud vendors
   awscli2
@@ -102,6 +104,7 @@ with pkgs;
   shellcheck
 
   # Benchmark
+  speedtest-cli
 
   # Bling
   cmatrix
