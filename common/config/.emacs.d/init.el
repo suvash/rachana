@@ -167,6 +167,8 @@
       (process-send-string proc text)
       (process-send-eof proc))))
 
+;; coreutils has to be installed for
+;; full emacs macos integration
 
 (defun suv/remap-macos-modifier-keys ()
   ;;(setq mac-function-modifier 'hyper)

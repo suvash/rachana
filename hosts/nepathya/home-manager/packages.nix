@@ -4,7 +4,8 @@ with pkgs;
 
 [
   # Essentials
-  coreutils # among many others needed for emacs dired
+  coreutils-full
+  binutils
   gnumake
 
   # Git family
