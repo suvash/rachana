@@ -124,7 +124,7 @@
         AppleMeasurementUnits = "Centimeters";
         AppleMetricUnits = 1;
         AppleTemperatureUnit = "Celsius";
-        _HIHideMenuBar = true;
+        _HIHideMenuBar = false;
       };
 
       # Apple Firewall
