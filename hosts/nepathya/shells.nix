@@ -1,11 +1,7 @@
-{config, pkgs, lib, ...}:
+{ config, pkgs, lib, ... }:
 
 {
-  environment.shells = with pkgs; [
-    bashInteractive
-    fish
-    zsh
-  ];
+  environment.shells = with pkgs; [ bashInteractive fish zsh ];
 
   environment.loginShell = "${pkgs.fish}/bin/fish -l";
   environment.variables.SHELL = "${pkgs.fish}/bin/fish";

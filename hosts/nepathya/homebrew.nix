@@ -12,43 +12,44 @@
       noLock = true;
     };
 
-   taps = [
-    "homebrew/core"
-    "homebrew/cask"
-    "homebrew/cask-versions"
-    "homebrew/cask-drivers"
-    "homebrew/cask-fonts"
-   ];
+    taps = [
+      "homebrew/core"
+      "homebrew/cask"
+      "homebrew/cask-versions"
+      "homebrew/cask-drivers"
+      "homebrew/cask-fonts"
+    ];
 
-   brews = [
-     "mas"
-     "svn" # for the fonts
-   ];
+    brews = [
+      "mas"
+      "svn" # for the fonts
+      "speedtest-cli"
+    ];
 
-   masApps = {
-    "Slack" = 803453959;
-    "Tailscale" = 1475387142;
-    "Hand Mirror" = 1502839586;
-    "Bitwarden" = 1352778147;
-    "iNet Network Scanner" = 403304796;
-    "NetSpot" = 514951692;
-   };
+    masApps = {
+      "Slack" = 803453959;
+      "Tailscale" = 1475387142;
+      "Hand Mirror" = 1502839586;
+      "Bitwarden" = 1352778147;
+      "iNet Network Scanner" = 403304796;
+      "NetSpot" = 514951692;
+    };
 
-   casks = [
-     "emacs"
-     "iterm2"
-     "karabiner-elements"
-     "keepingyouawake"
-     "zoom"
+    casks = [
+      "emacs"
+      "iterm2"
+      "karabiner-elements"
+      "keepingyouawake"
+      "zoom"
 
-     "font-ubuntu"
-     "font-ubuntu-mono"
-     "font-fira-code"
-   ];
+      "font-ubuntu"
+      "font-ubuntu-mono"
+      "font-fira-code"
+    ];
 
-   extraConfig = ''
-     cask_args appdir: "~/Applications/Casks/", require_sha: true
-   '';
+    extraConfig = ''
+      cask_args appdir: "~/Applications/Casks/", require_sha: true
+    '';
 
   };
 }

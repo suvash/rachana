@@ -1,16 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./settings.nix
-  ];
+  imports = [ ./settings.nix ];
 
   system = {
     defaults = {
 
-      LaunchServices = {
-        LSQuarantine = true;
-      };
+      LaunchServices = { LSQuarantine = true; };
 
       ".GlobalPreferences" = {
         "com.apple.sound.beep.sound" = "/System/Library/Sounds/Sosumi.aiff";
@@ -69,9 +65,7 @@
         ServerDescription = "${config.settings.hostname}";
       };
 
-      spaces = {
-        spans-displays = false;
-      };
+      spaces = { spans-displays = false; };
 
       trackpad = {
         Clicking = true;

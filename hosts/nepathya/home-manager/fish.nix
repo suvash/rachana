@@ -1,10 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ../settings.nix
-    <home-manager/nix-darwin>
-  ];
+  imports = [ ../settings.nix <home-manager/nix-darwin> ];
 
   home-manager.users.${config.settings.username} = { pkgs, ... }: {
     programs.fish = {

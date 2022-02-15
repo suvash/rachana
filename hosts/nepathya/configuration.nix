@@ -38,27 +38,17 @@
     localHostName = "${config.settings.hostname}";
 
     # cloudflare dns
-    dns = [
-     "1.1.1.1"
-     "1.0.0.1"
-     "2606:4700:4700::1111"
-     "2606:4700:4700::1001"
-    ];
+    dns = [ "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001" ];
 
     # networksetup -listallnetworkservices
-    knownNetworkServices = [
-     "Wi-Fi"
-     "Apple USB Ethernet Adapter"
-     "Thunderbolt Bridge"
-    ];
+    knownNetworkServices =
+      [ "Wi-Fi" "Apple USB Ethernet Adapter" "Thunderbolt Bridge" ];
   };
 
   # ENVIRONMENT =====================================================================
 
   # System level packages
-  environment.systemPackages = with pkgs; [
-    terminal-notifier
-  ];
+  environment.systemPackages = with pkgs; [ terminal-notifier ];
 
   # Env vars
   environment.variables = {
@@ -69,8 +59,7 @@
   # FONTS ===========================================================================
 
   # Fonts
-  fonts.fonts = with pkgs; [
-  ];
+  fonts.fonts = with pkgs; [ ];
 
   # PROGRAMS ========================================================================
 

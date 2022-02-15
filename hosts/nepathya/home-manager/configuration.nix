@@ -1,10 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ../settings.nix
-    <home-manager/nix-darwin>
-  ];
+  imports = [ ../settings.nix <home-manager/nix-darwin> ];
 
   home-manager.users.${config.settings.username} = { pkgs, ... }: {
     nixpkgs.config = {
@@ -21,7 +18,8 @@
 
     # Tmux
     home.file.".tmux.conf".source = ../../../common/config/tmux/tmux.conf;
-    home.file.".tmux-macos.conf".source = ../../../common/config/tmux/tmux-macos.conf;
+    home.file.".tmux-macos.conf".source =
+      ../../../common/config/tmux/tmux-macos.conf;
 
     # Hushlogin
     home.file.".hushlogin".text = "For quieter logins. See `man login`.";
