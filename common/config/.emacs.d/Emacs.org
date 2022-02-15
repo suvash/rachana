@@ -285,6 +285,14 @@
     (suv/darwin-only-setup))
 #+end_src
 
+*** Emacs on macOS
+
+Following requirements has to be met for Emacs to work properly on macOS.
+- Full Disk Access : Emacs.app
+- Full Disk Access : /usr/bin/ruby
+- coreutils : needed for Emacs features such as dired.
+
+
 * Keybinding system
 
 ** Global keybindings
