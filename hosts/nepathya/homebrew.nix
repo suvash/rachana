@@ -21,30 +21,46 @@
     ];
 
     brews = [
-      "mas"
       "svn" # for the fonts
-      "speedtest-cli"
     ];
 
     masApps = {
+      "Bitwarden" = 1352778147;
+      "DuckDuckGo Privacy Essentials" = 1482920575;
+      "Hand Mirror" = 1502839586;
+      "Mactracker" = 430255202;
+      "NetSpot" = 514951692;
+      "Save to Pocket" = 1477385213;
       "Slack" = 803453959;
       "Tailscale" = 1475387142;
-      "Hand Mirror" = 1502839586;
-      "Bitwarden" = 1352778147;
+      "TweetDeck" = 485812721;
+      "Vimari" = 1480933944;
       "iNet Network Scanner" = 403304796;
-      "NetSpot" = 514951692;
     };
 
     casks = [
+      "alfred"
+      "anki"
+      "brave-browser"
+      "chrysalis"
+      "coconutbattery"
+      "disk-inventory-x"
+      "docker"
       "emacs"
+      "firefox"
+      "font-fira-code"
+      "font-ubuntu"
+      "font-ubuntu-mono"
+      "google-chrome"
       "iterm2"
       "karabiner-elements"
       "keepingyouawake"
+      "keka"
+      "kekaexternalhelper"
+      "nordvpn"
+      "signal"
+      "whatsapp"
       "zoom"
-
-      "font-ubuntu"
-      "font-ubuntu-mono"
-      "font-fira-code"
     ];
   };
 }
