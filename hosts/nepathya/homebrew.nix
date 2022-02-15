@@ -46,10 +46,5 @@
       "font-ubuntu-mono"
       "font-fira-code"
     ];
-
-    extraConfig = ''
-      cask_args appdir: "~/Applications/Casks/", require_sha: true
-    '';
-
   };
 }

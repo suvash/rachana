@@ -57,7 +57,7 @@ echo "-- Installing Homebrew if not already installed"
 if [[ ! "$(type -P brew)" ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   brew doctor
-  mkdir -p ~/Applications/Casks
+  mkdir -p ~/Applications
 fi
 echo "-- brew is installed"
 
