@@ -40,6 +40,7 @@
 
     casks = [
       "alfred"
+      "amethyst"
       "anki"
       "brave-browser"
       "chrysalis"
