@@ -283,6 +283,12 @@
     description = "${config.settings.fullname}";
     extraGroups = [ "wheel" "docker" "audio" ];
     shell = pkgs.fish;
+    openssh = {
+      authorizedKeys = {
+        keyFiles =
+          [ (../../common/config/keys/ssh + "/${config.settings.username}.key") ];
+      };
+    };
   };
 
   # Before changing this value read the documentation for this option
