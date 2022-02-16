@@ -3,8 +3,6 @@
 with pkgs;
 
 [
-  # Essentials
-
   # GNU bundles
   coreutils-full
   binutils
