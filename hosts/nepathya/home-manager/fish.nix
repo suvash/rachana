@@ -61,8 +61,8 @@
         nss = "nix-env -qaP --description '.*<here>.*'";
 
         # provisioning things
-        mi = "bash ~/rachana/hosts/(hostname)/provision/init.sh";
-        mb = "bash ~/rachana/hosts/(hostname)/provision/build.sh";
+        mi = "bash ~/Developer/rachana/hosts/(hostname)/provision/init.sh";
+        mb = "bash ~/Developer/rachana/hosts/(hostname)/provision/build.sh";
 
         # docker things
         di = "docker image ls";
