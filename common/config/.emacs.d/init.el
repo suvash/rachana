@@ -167,6 +167,9 @@
       (process-send-string proc text)
       (process-send-eof proc))))
 
+;; coreutils has to be installed for
+;; full emacs macos integration
+
 (defun suv/remap-macos-modifier-keys ()
   ;;(setq mac-function-modifier 'hyper)
   ;;(setq mac-control-modifier 'control)
@@ -177,9 +180,16 @@
   ;;(setq mac-right-control-modifier nil)
   (message "No keys remapped"))
 
+(defun suv/exec-path-from-shell-init ()
+  (use-package exec-path-from-shell
+    :config
+    (setq exec-path-from-shell-variables '("PATH" "LANG" "LC_ALL" "SSH_AUTH_SOCK"))
+    (exec-path-from-shell-initialize)))
+
 (defun suv/darwin-only-setup ()
   (setq interprogram-cut-function 'suv/paste-to-macos)
   (setq interprogram-paste-function 'suv/copy-from-macos)
+  (suv/exec-path-from-shell-init)
   (suv/remap-macos-modifier-keys))
 
 (when (string-equal system-type "darwin")
@@ -192,7 +202,7 @@
 ;; setup counsel
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
-	 ("C-x b" . counsel-switch-buffer)
+         ("C-x b" . counsel-switch-buffer)
          ("C-x C-f" . counsel-find-file)
          ("C-h v" . counsel-describe-variable)
          ("C-h f" . counsel-describe-function)
@@ -209,7 +219,7 @@
   :config
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t
-	ivy-count-format "%d/%d "))
+        ivy-count-format "%d/%d "))
 
 ;; setup ivy-rich
 (use-package ivy-rich
