@@ -6,7 +6,7 @@
     enable = true;
     skhdConfig = ''
       cmd + shift - r : ${pkgs.skhd}/bin/skhd --reload
-      cmd - return : open -n /Applications/iTerm.app
+      cmd + shift - return : open -n /Applications/iTerm.app
 
       ctrl + cmd - e : open -n /Applications/Emacs.app
       ctrl + cmd - l : open /Applications/Slack.app
