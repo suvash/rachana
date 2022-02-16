@@ -12,6 +12,9 @@
     # shells
     ./shells.nix
 
+    # services
+    ./services.nix
+
     # home manager
     ./home-manager/configuration.nix
     ./home-manager/fish.nix
