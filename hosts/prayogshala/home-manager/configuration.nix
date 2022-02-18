@@ -265,6 +265,10 @@ in {
         pgg = "ping goo.gl";
         ports = "netstat -tunap";
 
+        # eth up and down
+        ethup = "sudo ip link set dev eno1 up";
+        ethdn = "sudo ip link set dev eno1 down";
+
         # other
         du = "du -chs *";
         fonts = "fc-list : family";

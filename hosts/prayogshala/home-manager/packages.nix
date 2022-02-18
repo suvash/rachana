@@ -38,6 +38,7 @@ with pkgs;
 
   # Entertainment
   spotify
+  apple-music-electron
   playerctl
 
   # File manipulation
