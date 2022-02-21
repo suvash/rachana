@@ -1,0 +1,47 @@
+theme = "slick"
+icons = "awesome"
+
+[[block]]
+block = "docker"
+interval = 10
+format = "{running}/{total}"
+
+[[block]]
+block = "disk_space"
+path = "/"
+format =" {available}"
+unit = "GB"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used;G} {mem_used_percents}"
+format_swap = "{swap_used;G} {swap_used_percents}"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{barchart} {utilization}"
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 5
+format = "{min} • {max} C"
+
+[[block]]
+block = "time"
+interval = 5
+timezone = "Asia/Kathmandu"
+format = "%I:%M%P NE"
+
+[[block]]
+block = "time"
+interval = 5
+timezone = "Europe/Stockholm"
+format = "W%W %a %m/%d %H:%M SE"
+
+[[block]]
+block = "battery"
+driver = "upower"
+format = "{percentage} {time}"
