@@ -370,12 +370,14 @@ in {
         bars = [{
           fonts = {
             names = [ "Ubuntu Mono" "FontAwesome" ];
-            size = 14.0;
-            style = "";
+            size = 12.0;
           };
           statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${
-              ./config/i3status/i3status-rust.toml
+              ./config/i3status/laptop.toml
             }";
+          extraConfig = ''
+            output eDP-1
+          '';
         }];
 
         gaps = {

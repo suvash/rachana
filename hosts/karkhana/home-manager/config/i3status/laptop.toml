@@ -15,19 +15,19 @@ unit = "GB"
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{mem_used;G} {mem_used_percents}"
-format_swap = "{swap_used;G} {swap_used_percents}"
+format_mem = "{mem_used;G}"
+format_swap = "{swap_used;G}"
 
 [[block]]
 block = "cpu"
 interval = 1
-format = "{barchart} {utilization}"
+format = "{utilization}"
 
 [[block]]
 block = "temperature"
 collapsed = false
 interval = 5
-format = "{min} • {max} C"
+format = "{max} C"
 
 [[block]]
 block = "time"
@@ -39,7 +39,7 @@ format = "%I:%M%P NE"
 block = "time"
 interval = 5
 timezone = "Europe/Stockholm"
-format = "W%W %a %m/%d %H:%M SE"
+format = "%a %m/%d %H:%M SE"
 
 [[block]]
 block = "battery"
