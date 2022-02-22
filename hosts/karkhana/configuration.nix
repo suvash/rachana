@@ -219,6 +219,13 @@
   # Select a display/login manager
   services.xserver.displayManager = {
     defaultSession = "xfce+i3";
+    sessionCommands = ''
+      ${pkgs.xorg.xrdb}/bin/xrdb -merge <<EOF
+      # 3840x2160 on 27" -> 163
+      # 1920x1080 on 13.3" -> 166
+      Xft.dpi: 166
+      EOF
+    '';
     lightdm = {
       enable = true;
       # https://github.com/NixOS/nixpkgs/issues/108289#issuecomment-758263467
