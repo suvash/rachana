@@ -123,7 +123,7 @@ in {
     services.screen-locker = {
       enable = true;
       lockCmd =
-        "${pkgs.i3lock}/bin/i3lock --nofork --image /etc/login-wallpapers/unsplash.png";
+        "${pkgs.i3lock}/bin/i3lock --nofork --image /etc/wallpapers/lock.png";
       inactiveInterval = 1;
     };
 
@@ -343,7 +343,7 @@ in {
 
           # Utilities
           "Mod4+ctrl+l" =
-            "exec i3lock --nofork --image /etc/login-wallpapers/unsplash.png";
+            "exec i3lock --nofork --image /etc/wallpapers/lock.png";
           "Mod4+ctrl+w" =
             "exec feh --bg-tile --no-fehbg --randomize ~/.wallpapers/tiled";
           "Mod4+ctrl+v" = "exec CM_LAUNCHER=rofi clipmenu";

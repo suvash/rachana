@@ -141,9 +141,14 @@
   };
 
   # Login/Lock screen image
-  environment.etc."login-wallpapers/unsplash.png" = {
+  environment.etc."wallpapers/login.png" = {
     mode = "0555";
-    source = ../../common/wallpapers/login/unsplash.png;
+    source = ../../common/wallpapers/whole/orion-hubble.png;
+  };
+
+  environment.etc."wallpapers/lock.png" = {
+    mode = "0555";
+    source = ../../common/wallpapers/whole/orion-hubble.png;
   };
 
   # FONTS ===========================================================================
@@ -230,7 +235,7 @@
           show-input-cursor = false
           password-alignment = left
           [greeter-theme]
-          background-image = "/etc/login-wallpapers/unsplash.png"
+          background-image = "/etc/wallpapers/login.png"
         '';
       };
     };
