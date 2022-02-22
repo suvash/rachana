@@ -89,6 +89,8 @@ with pkgs;
   smartmontools
 
   # Network
+  iw
+  ethtool
   traceroute
   gping
   nmap

@@ -367,18 +367,32 @@ in {
             exec notify-send -t 4000 Network "LAN: $(ip addr show eno1 | awk '/inet /{print $2}')\nWAN: $(curl ifconfig.me)"'';
         };
 
-        bars = [{
-          fonts = {
-            names = [ "Ubuntu Mono" "FontAwesome" ];
-            size = 12.0;
-          };
-          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${
-              ./config/i3status/laptop.toml
-            }";
-          extraConfig = ''
-            output eDP-1
-          '';
-        }];
+        bars = [
+          {
+            fonts = {
+              names = [ "Ubuntu Mono" "FontAwesome" ];
+              size = 12.0;
+            };
+            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${
+                ./config/i3status/laptop.toml
+              }";
+            extraConfig = ''
+              output primary
+            '';
+          }
+          {
+            fonts = {
+              names = [ "Ubuntu Mono" "FontAwesome" ];
+              size = 12.0;
+            };
+            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${
+                ./config/i3status/monitor.toml
+              }";
+            extraConfig = ''
+              output nonprimary
+            '';
+          }
+        ];
 
         gaps = {
           inner = 10;

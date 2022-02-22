@@ -2,32 +2,10 @@ theme = "slick"
 icons = "awesome"
 
 [[block]]
-block = "docker"
-interval = 10
-format = "{running}/{total}"
+block = "notify"
 
 [[block]]
-block = "disk_space"
-path = "/"
-format =" {available}"
-unit = "GB"
-
-[[block]]
-block = "memory"
-display_type = "memory"
-format_mem = "{mem_used;G}"
-format_swap = "{swap_used;G}"
-
-[[block]]
-block = "cpu"
-interval = 1
-format = "{utilization}"
-
-[[block]]
-block = "temperature"
-collapsed = false
-interval = 5
-format = "{max} C"
+block = "backlight"
 
 [[block]]
 block = "time"
@@ -39,7 +17,32 @@ format = "%I:%M%P NE"
 block = "time"
 interval = 5
 timezone = "Europe/Stockholm"
-format = "%a %m/%d %H:%M SE"
+format = "W%W %a %m/%d %H:%M SE"
+
+[[block]]
+block = "disk_space"
+path = "/"
+format ="{icon} {available}"
+unit = "GB"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used;G}"
+format_swap = "{swap_used;G}"
+
+[[block]]
+block = "cpu"
+interval = 1
+[block.format]
+short = "{utilization}"
+full = "{utilization} {frequency}"
+
+[[block]]
+block = "temperature"
+collapsed = true
+interval = 5
+format = "{min}•{max}C"
 
 [[block]]
 block = "battery"
