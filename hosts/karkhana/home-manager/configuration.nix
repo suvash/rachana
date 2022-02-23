@@ -364,7 +364,7 @@ in {
 
           # Notifications
           "Mod4+ctrl+n" = ''
-            exec notify-send -t 4000 Network "LAN: $(ip addr show eno1 | awk '/inet /{print $2}')\nWAN: $(curl ifconfig.me)"'';
+            exec notify-send -t 4000 Network "LAN: $(ip route show default | awk '{print $9 " ("$5")"}')\nWAN: $(curl ifconfig.me)"'';
         };
 
         bars = [
