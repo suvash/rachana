@@ -36,6 +36,7 @@ text = "WiFi"
 command_state = "ip a | grep wlp58s0 | grep 'state UP'"
 command_on = "nmcli radio wifi on"
 command_off = "nmcli radio wifi off"
+interval = 5
 
 [[block]]
 block = "docker"
