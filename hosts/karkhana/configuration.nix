@@ -81,6 +81,9 @@
     powertop = { enable = true; };
   };
 
+  # Firmware update service
+  services.fwupd.enable = true;
+
   # LOCALISATION ====================================================================
 
   # Select internationalisation properties.
