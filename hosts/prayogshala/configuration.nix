@@ -285,8 +285,9 @@
     shell = pkgs.fish;
     openssh = {
       authorizedKeys = {
-        keyFiles =
-          [ (../../common/config/keys/ssh + "/${config.settings.username}.key") ];
+        keyFiles = [
+          (../../common/config/keys/ssh + "/${config.settings.username}.key")
+        ];
       };
     };
   };

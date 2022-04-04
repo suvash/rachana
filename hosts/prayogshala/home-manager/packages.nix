@@ -39,6 +39,7 @@ with pkgs;
   # Entertainment
   spotify
   apple-music-electron
+  unstable.plex-media-player
   playerctl
 
   # File manipulation
