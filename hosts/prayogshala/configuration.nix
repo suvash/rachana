@@ -47,7 +47,7 @@
       insmod fat
       insmod search_fs_uuid
       insmod chain
-      search --fs-uuid --set=root 2C7B-C51F
+      search --fs-uuid --set=root 7EEE-E88E
       chainloader /EFI/Microsoft/Boot/bootmgfw.efi
       insmod part_gpt
     }
