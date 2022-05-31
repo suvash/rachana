@@ -318,6 +318,10 @@ in {
 
         keybindings = lib.mkOptionDefault {
           ## Missing
+          # Backlight
+          "XF86KbdBrightnessUp" = "exec brightnessctl set +10%";
+          "XF86KbdBrightnessDown" = "exec brightnessctl set 10%-";
+
           # Focus
           "Mod4+j" = "focus left";
           "Mod4+k" = "focus down";
@@ -363,8 +367,12 @@ in {
           "Mod4+ctrl+x" = "exec systemctl --user restart xcape";
 
           # Notifications
+          "Mod4+ctrl+d" = ''
+            exec notify-send -t 4000 Date/Time "$(date)"
+          '';
           "Mod4+ctrl+n" = ''
-            exec notify-send -t 4000 Network "LAN: $(ip route show default | awk '{print $9 " ("$5")"}')\nWAN: $(curl ifconfig.me)"'';
+            exec notify-send -t 4000 Network "LAN: $(ip route get $(ip route show default | grep -oP 'via \K\S+') | grep -oP 'src \K\S+')"
+          '';
         };
 
         bars = [

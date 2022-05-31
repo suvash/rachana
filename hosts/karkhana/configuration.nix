@@ -226,7 +226,7 @@
       ${pkgs.xorg.xrdb}/bin/xrdb -merge <<EOF
       # 3840x2160 on 27" -> 163
       # 2560x1440 on 27" -> 109
-      Xft.dpi: 109
+      Xft.dpi: 163
       EOF
     '';
     lightdm = {

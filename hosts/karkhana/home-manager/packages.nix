@@ -47,6 +47,7 @@ with pkgs;
   tokei
 
   # X server/window
+  brightnessctl
   arandr
   flameshot
   xcape
@@ -142,7 +143,11 @@ with pkgs;
   ispell
   shellcheck
 
+  # Audit etc
+  unstable.lynis
+
   # Communication
   slack
+  discord
   zoom-us
 ]
