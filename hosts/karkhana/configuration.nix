@@ -289,6 +289,9 @@
     };
   };
 
+  # Logrotate
+  services.logrotate.enable = true;
+
   # Enable the OpenSSH server.
   services.openssh.enable = true;
 
