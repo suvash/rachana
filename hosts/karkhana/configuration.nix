@@ -19,7 +19,7 @@
     ./yubikey.nix
 
     # tailscale
-    ./tailscale.nix
+    # ./tailscale.nix
   ];
 
   # BOOT ============================================================================
@@ -47,6 +47,9 @@
   networking.networkmanager.enable = true;
 
   # Use specific nameservers
+  # Google NS
+  # networking.nameservers = [ "8.8.8.8" "8.8.4.4" ];
+  # Cloudflare NS
   networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
 
   # Open ports in the firewall.
@@ -54,8 +57,9 @@
     enable = true;
     # trustedInterfaces = [ "tailscale0" ];
     # allowedUDPPorts = [ config.services.tailscale.port 7531 ];
-    allowedUDPPorts = [ 7531 ];
-    allowedTCPPorts = [ 7531 ];
+    # allowedUDPPorts = [ 7531 ];
+    allowedUDPPorts = [ ];
+    allowedTCPPorts = [ ];
   };
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
