@@ -319,6 +319,12 @@
     drivers = [ pkgs.hplip ];
   };
 
+  # Clamav
+  services.clamav = {
+    daemon = { enable = true; };
+    updater = { enable = true; };
+  };
+
   # USERS ===========================================================================
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

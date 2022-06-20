@@ -145,7 +145,6 @@ with pkgs;
 
   # Audit etc
   unstable.lynis
-  clamav
 
   # Communication
   slack
