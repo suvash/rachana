@@ -292,8 +292,8 @@
   # Logrotate
   services.logrotate.enable = true;
 
-  # Enable the OpenSSH server.
-  services.openssh.enable = true;
+  # Disable the OpenSSH server.
+  services.openssh.enable = false;
 
   # Vnstat
   services.vnstat.enable = true;
