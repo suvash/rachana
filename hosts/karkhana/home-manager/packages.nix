@@ -29,7 +29,6 @@ with pkgs;
   playerctl
 
   # File manipulation
-  ag
   fd
   ripgrep
   exa
@@ -41,6 +40,7 @@ with pkgs;
   unzip
   multitail
   dos2unix
+  silver-searcher
 
   # Help
   tldr
