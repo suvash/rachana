@@ -269,6 +269,8 @@ in {
         pgg = "ping goo.gl";
         ports = "netstat -tunap";
 
+        # system
+        dmsg = "dmesg -w -L";
         # other
         du = "du -chs *";
         fonts = "fc-list : family";
