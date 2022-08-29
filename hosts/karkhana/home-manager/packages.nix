@@ -64,6 +64,9 @@ with pkgs;
   lm_sensors
   lsof
 
+  # Video devices
+  v4l-utils
+
   # System monitoring
   acpi
   htop
