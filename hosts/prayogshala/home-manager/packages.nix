@@ -29,6 +29,7 @@ with pkgs;
   glxinfo
   unstable.nvtop
   unigine-valley
+  gnome.cheese
 
   # Pulseaudio tools
   paprefs
@@ -38,9 +39,11 @@ with pkgs;
 
   # Entertainment
   spotify
-  apple-music-electron
   unstable.plex-media-player
   playerctl
+
+  # Papers, Notes etc.
+  zotero
 
   # File manipulation
   ag
@@ -129,14 +132,15 @@ with pkgs;
 
   # Cloud vendors
   awscli
-  google-cloud-sdk
+  (unstable.google-cloud-sdk.withExtraComponents [unstable.google-cloud-sdk.components.kubectl
+                                                  unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin])
 
   # Infrastructure
   iamy
   sops
   terraform
   packer
-  kubectl
+  # kubectl
   kubectx
   stern
   k9s
@@ -160,6 +164,7 @@ with pkgs;
   yamllint
   ispell
   shellcheck
+  gron
 
   # Communication
   slack
