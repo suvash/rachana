@@ -2,10 +2,13 @@
 
 {
   # make the tailscale command usable to users
-  environment.systemPackages = [ pkgs.tailscale ];
+  environment.systemPackages = [ pkgs.unstable.tailscale ];
 
   # enable the tailscale service
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    package = pkgs.unstable.tailscale;
+  };
 
   # create a oneshot job to authenticate to Tailscale
   systemd.services.tailscale-autoconnect = {
@@ -25,7 +28,7 @@
       sleep 2
 
       # check if we are already authenticated to tailscale
-      status="$(${pkgs.tailscale}/bin/tailscale status -json | ${jq}/bin/jq -r .BackendState)"
+      status="$(${pkgs.unstable.tailscale}/bin/tailscale status -json | ${jq}/bin/jq -r .BackendState)"
       if [ $status = "Running" ]; then # if so, then do nothing
         exit 0
       fi
