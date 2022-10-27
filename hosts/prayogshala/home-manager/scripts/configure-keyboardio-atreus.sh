@@ -2,7 +2,7 @@
 
 set -eu
 
-atreus_keyboard_id=$(xinput -list | awk -Fid= '/Keyboardio Atreus Keyboard/{ print $2 }' | awk '{ print $1 }')
+atreus_keyboard_id=$(xinput -list | awk -Fid= '/Keyboardio Atreus Keyboard/{ print $2 }' | awk '/keyboard/{ print $1 }')
 if [ "${atreus_keyboard_id}" != "" ]; then
     setxkbmap -device "${atreus_keyboard_id}" -model atreus -layout 'us' -variant '' -option ''
 
