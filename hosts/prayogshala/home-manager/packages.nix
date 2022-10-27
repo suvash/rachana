@@ -46,7 +46,7 @@ with pkgs;
   zotero
 
   # File manipulation
-  ag
+  silver-searcher
   fd
   ripgrep
   exa

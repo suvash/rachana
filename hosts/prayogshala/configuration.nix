@@ -64,6 +64,7 @@
   # Open ports in the firewall.
   networking.firewall = {
     enable = true;
+    checkReversePath = "loose";
     trustedInterfaces = [ "tailscale0" ];
     allowedUDPPorts = [ config.services.tailscale.port 7531 ];
     allowedTCPPorts = [ 7531 ];
@@ -297,6 +298,6 @@
 
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.11";
+  system.stateVersion = "22.05";
 
 }
