@@ -34,7 +34,7 @@
       fi
 
       # otherwise up tailscale service
-      ${pkgs.tailscale}/bin/tailscale up
+      ${pkgs.unstable.tailscale}/bin/tailscale up
     '';
   };
 }
