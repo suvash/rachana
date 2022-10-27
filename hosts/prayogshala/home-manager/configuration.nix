@@ -210,7 +210,7 @@ in {
         gup =
           "git fetch --all --prune --prune-tags; and git rebase --rebase-merges '@{upstream}'";
         gsp =
-          "git stash; and git fetch --all -p; and git rebase -p '@{upstream}'; and git stash pop";
+          "git stash; and git fetch --all --prune --prune-tags; and git rebase --rebase-merges '@{upstream}'; and git stash pop";
         gprn = "git remote prune origin --dry-run";
         gm = "git merge --no-ff --log";
         gc = "git commit -v";
