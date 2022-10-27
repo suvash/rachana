@@ -66,6 +66,7 @@ with pkgs;
 
   # Video devices
   v4l-utils
+  gnome.cheese
 
   # System monitoring
   acpi
@@ -133,6 +134,7 @@ with pkgs;
 
   # Bling
   cmatrix
+  unstable.hollywood
 
   # Fonts
   font-manager
