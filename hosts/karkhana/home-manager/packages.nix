@@ -116,14 +116,15 @@ with pkgs;
 
   # Cloud vendors
   awscli
-  google-cloud-sdk
+  (unstable.google-cloud-sdk.withExtraComponents [unstable.google-cloud-sdk.components.kubectl
+                                                  unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin])
+
 
   # Infrastructure
   iamy
   sops
   terraform
   packer
-  kubectl
   kubectx
   stern
 
