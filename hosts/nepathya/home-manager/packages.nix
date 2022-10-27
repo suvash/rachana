@@ -17,7 +17,11 @@ with pkgs;
   gnupg
   gnugrep
 
+  # nix
+  niv
+
   # Git family
+  git-lfs
   tig
   delta
 
@@ -35,6 +39,7 @@ with pkgs;
   # Watchers followers etc
   watch
   multitail
+  direnv
 
   # Compression
   gzip
@@ -61,6 +66,7 @@ with pkgs;
   gping
   nmap
   wakeonlan
+  dogdns
 
   # Cloud vendors
   awscli2
@@ -103,6 +109,9 @@ with pkgs;
 
   # Benchmark
   speedtest-cli
+
+  # Java JDK etc
+  jdk11
 
   # Bling
   cmatrix

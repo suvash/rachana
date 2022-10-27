@@ -26,14 +26,12 @@
 
     masApps = {
       "Bitwarden" = 1352778147;
-      "DuckDuckGo Privacy Essentials" = 1482920575;
       "Hand Mirror" = 1502839586;
       "Mactracker" = 430255202;
       "NetSpot" = 514951692;
       "Save to Pocket" = 1477385213;
       "Slack" = 803453959;
       "Tailscale" = 1475387142;
-      "TweetDeck" = 485812721;
       "Vimari" = 1480933944;
       "iNet Network Scanner" = 403304796;
     };
@@ -42,9 +40,11 @@
       "alfred"
       "amethyst"
       "anki"
+      "authy"
       "brave-browser"
       "chrysalis"
       "coconutbattery"
+      "discord"
       "disk-inventory-x"
       "docker"
       "emacs"
@@ -56,11 +56,16 @@
       "iterm2"
       "karabiner-elements"
       "keepingyouawake"
+      "kensingtonworks"
       "keka"
       "kekaexternalhelper"
       "nordvpn"
       "signal"
+      "stretchly"
+      "spotify"
+      "vlc"
       "whatsapp"
+      "zotero"
       "zoom"
     ];
 
