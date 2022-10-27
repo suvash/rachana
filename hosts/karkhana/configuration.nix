@@ -19,7 +19,7 @@
     ./yubikey.nix
 
     # tailscale
-    # ./tailscale.nix
+    ./tailscale.nix
   ];
 
   # BOOT ============================================================================
@@ -55,11 +55,12 @@
   # Open ports in the firewall.
   networking.firewall = {
     enable = true;
-    # trustedInterfaces = [ "tailscale0" ];
-    # allowedUDPPorts = [ config.services.tailscale.port 7531 ];
-    # allowedUDPPorts = [ 7531 ];
-    allowedUDPPorts = [ ];
-    allowedTCPPorts = [ ];
+    checkReversePath = "loose";
+    trustedInterfaces = [ "tailscale0" ];
+    allowedUDPPorts = [ config.services.tailscale.port 7531 ];
+    allowedTCPPorts = [ 7531 ];
+    # allowedUDPPorts = [ ];
+    # allowedTCPPorts = [ ];
   };
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
