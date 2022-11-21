@@ -119,6 +119,7 @@ with pkgs;
   mosh
   fasd
   tmux
+  cool-retro-term
 
   # DNS
   dnsutils
