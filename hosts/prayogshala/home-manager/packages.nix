@@ -60,7 +60,7 @@ with pkgs;
   dos2unix
 
   # Help
-  tldr
+  tealdeer
   tokei
 
   # X server/window
