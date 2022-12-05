@@ -3,8 +3,8 @@
 let
   home-manager = builtins.fetchGit {
     url = "https://github.com/nix-community/home-manager.git";
-    rev = "b81e128fc053ab3159d7b464d9b7dedc9d6a6891";
-    ref = "release-22.05";
+    rev = "3cd5c21b80ee4f340cf2f1319e0529ca559ef50f";
+    ref = "release-22.11";
   };
 in {
   imports = [
@@ -22,6 +22,7 @@ in {
     };
 
     home.packages = import ./packages.nix { inherit pkgs; };
+    home.stateVersion = "22.11";
 
     services.xcape = {
       enable = true;
