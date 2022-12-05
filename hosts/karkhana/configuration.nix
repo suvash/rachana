@@ -279,6 +279,9 @@
 
   # SERVICES ========================================================================
 
+  # Blink your eyes
+  services.safeeyes.enable = true;
+
   # Avahi
   services.avahi = {
     enable = true;
