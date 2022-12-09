@@ -146,6 +146,7 @@
   environment.variables = {
     TERMINAL = "${config.settings.terminal}";
     EDITOR = "${config.settings.editor}";
+    USE_GKE_GCLOUD_AUTH_PLUGIN="True";
   };
 
   # Login/Lock screen image
