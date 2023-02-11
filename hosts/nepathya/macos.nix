@@ -28,11 +28,11 @@
 
       dock = {
         autohide = true;
-        autohide-delay = "0.0";
-        autohide-time-modifier = "0.0";
+        autohide-delay = 0.0;
+        autohide-time-modifier = 0.0;
         dashboard-in-overlay = true;
         enable-spring-load-actions-on-all-items = true;
-        expose-animation-duration = "0.1";
+        expose-animation-duration = 0.1;
         expose-group-by-app = false;
         launchanim = false;
         mineffect = "scale";
@@ -105,7 +105,7 @@
         NSTextShowsControlCharacters = true;
         NSUseAnimatedFocusRing = false;
         NSScrollAnimationEnabled = true;
-        NSWindowResizeTime = "0.001";
+        NSWindowResizeTime = 0.001;
         InitialKeyRepeat = 10;
         KeyRepeat = 1;
         PMPrintingExpandedStateForPrint = true;
@@ -115,11 +115,11 @@
         "com.apple.mouse.tapBehavior" = 1;
         "com.apple.trackpad.enableSecondaryClick" = true;
         "com.apple.trackpad.trackpadCornerClickBehavior" = null;
-        "com.apple.trackpad.scaling" = "1";
-        "com.apple.sound.beep.volume" = "0.7788008"; # 75%
-        "com.apple.sound.beep.feedback" = 1;
+        "com.apple.trackpad.scaling" = 1.0;
+        "com.apple.sound.beep.volume" = 0.7788; # 75%
+        "com.apple.sound.beep.feedback" = 0;
         "com.apple.springing.enabled" = true;
-        "com.apple.springing.delay" = "0.0";
+        "com.apple.springing.delay" = 0.0;
         "com.apple.swipescrolldirection" = true;
         AppleMeasurementUnits = "Centimeters";
         AppleMetricUnits = 1;
