@@ -90,6 +90,10 @@
         pgg = "ping goo.gl";
         ports = "netstat -tunap";
 
+        # nvim
+        n = "nvim";
+        nb = "nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'";
+
         # other
         du = "du -chs *";
         fonts = "fc-list : family";
