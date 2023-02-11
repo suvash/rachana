@@ -4,12 +4,14 @@
 
   homebrew = {
     enable = true;
-    autoUpdate = true;
-    cleanup = "zap";
+
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "zap";
+    };
 
     global = {
       brewfile = true;
-      noLock = true;
     };
 
     taps = [
@@ -18,10 +20,24 @@
       "homebrew/cask-versions"
       "homebrew/cask-drivers"
       "homebrew/cask-fonts"
+
+      "d12frosted/emacs-plus"
     ];
 
     brews = [
       "svn" # for the fonts
+      "neovim"
+      "elixir"
+
+      "rustup-init"
+      "npm"
+
+      {
+        name = "emacs-plus";
+        args = [ "with-modern-papirus-icon" "with-no-titlebar-and-round-corners" ];
+      }
+
+     "fontconfig"
     ];
 
     masApps = {
@@ -47,23 +63,26 @@
       "discord"
       "disk-inventory-x"
       "docker"
-      "emacs"
+      "element"
       "firefox"
       "font-fira-code"
       "font-ubuntu"
       "font-ubuntu-mono"
       "google-chrome"
       "iterm2"
+      "kitty"
       "karabiner-elements"
       "keepingyouawake"
       "kensingtonworks"
       "keka"
       "kekaexternalhelper"
       "nordvpn"
+      "postman"
+      "quarto"
       "signal"
-      "stretchly"
       "spotify"
       "vlc"
+      "visual-studio-code"
       "whatsapp"
       "zotero"
       "zoom"
