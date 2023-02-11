@@ -61,3 +61,9 @@ echo "-- Cloning down packer.nvim to packpath"
 if [ ! -d "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim" ]; then
   git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 fi
+
+echo "-- Setting up nvim"
+if [ ! -L "$HOME/.config/nvim" ]; then
+  mv "$HOME/.config/nvim" "$HOME/.config/nvim.orig"
+  ln -sfnv "$HOME/Developer/rachana/common/config/nvim" "$HOME/.config/nvim"
+fi
