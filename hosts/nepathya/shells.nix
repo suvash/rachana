@@ -18,5 +18,7 @@
         set -g fish_user_paths $fish_user_paths $p
       end
     end
+
+    fish_add_path $HOME/.cargo/bin
   '';
 }
