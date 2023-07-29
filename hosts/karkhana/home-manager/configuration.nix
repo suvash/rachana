@@ -332,6 +332,7 @@ in {
           "Mod4+Shift+k" = "move down";
           "Mod4+Shift+l" = "move up";
           "Mod4+Shift+semicolon" = "move right";
+          "Mod4+n" = "move workspace to output next";
 
           ## Overrides
           "Mod4+Shift+e" = "exec xfce4-session-logout";

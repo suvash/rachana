@@ -108,6 +108,7 @@ with pkgs;
   mosh
   fasd
   tmux
+  zellij
 
   # DNS
   dnsutils

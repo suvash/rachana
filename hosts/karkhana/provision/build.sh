@@ -5,8 +5,8 @@
 # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
 
 # Update channels
-# sudo nix-channel --update nixos
-# sudo nix-channel --update nixos-unstable
+sudo nix-channel --update nixos
+sudo nix-channel --update nixos-unstable
 
 # Use the new configuration
 sudo nixos-rebuild switch
