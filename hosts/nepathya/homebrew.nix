@@ -15,10 +15,7 @@
     };
 
     taps = [
-      "homebrew/core"
-      "homebrew/cask"
       "homebrew/cask-versions"
-      "homebrew/cask-drivers"
       "homebrew/cask-fonts"
 
       "d12frosted/emacs-plus"
@@ -63,7 +60,6 @@
       "discord"
       "disk-inventory-x"
       "docker"
-      "element"
       "firefox"
       "font-fira-code"
       "font-ubuntu"
@@ -76,9 +72,7 @@
       "kensingtonworks"
       "keka"
       "kekaexternalhelper"
-      "nordvpn"
       "postman"
-      "quarto"
       "signal"
       "spotify"
       "vlc"
