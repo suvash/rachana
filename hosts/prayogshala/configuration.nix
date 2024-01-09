@@ -205,6 +205,9 @@
   services.xserver.autoRepeatDelay = 200;
   services.xserver.autoRepeatInterval = 60;
 
+  # Wacom
+  services.xserver.wacom.enable = true;
+
   # Select a desktop manager - no window management
   services.xserver.desktopManager = {
     xterm.enable = false;
