@@ -378,17 +378,6 @@ in {
             exec notify-send -t 4000 Network "LAN: $(ip addr show eno1 | awk '/inet /{print $2}')\nWAN: $(curl ifconfig.me)"'';
         };
 
-        bars = [{
-          fonts = {
-            names = [ "Ubuntu Mono" "FontAwesome" ];
-            size = 14.0;
-            style = "";
-          };
-          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${
-              ./config/i3status/i3status-rust.toml
-            }";
-        }];
-
         gaps = {
           inner = 10;
           smartGaps = true;
