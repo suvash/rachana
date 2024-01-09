@@ -396,7 +396,7 @@ in {
 
       extraConfig = ''
         exec --no-startup-id ~/.local/bin/configure-expert-wireless.sh
-        exec --no-startup-id ~/.local/bin/configure-kinesis-advantage.sh
+        exec --no-startup-id ~/.local/bin/configure-advantage.sh
       '';
     };
   };
