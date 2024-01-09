@@ -107,7 +107,8 @@ in {
 
     services.picom = {
       enable = true;
-      inactiveDim = "0.05";
+      fade = true;
+      fadeDelta = 3;
     };
 
     services.random-background = {
