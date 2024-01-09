@@ -24,7 +24,7 @@
         type = with lib.types; uniq str;
       };
       terminal = lib.mkOption {
-        default = "cool-retro-term";
+        default = "kitty";
         type = with lib.types; uniq str;
       };
       editor = lib.mkOption {
