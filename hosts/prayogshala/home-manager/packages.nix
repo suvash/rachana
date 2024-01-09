@@ -28,6 +28,7 @@ with pkgs;
   # Graphics tools
   glxinfo
   unstable.nvtop
+  unstable.nvitop
   unigine-valley
   gnome.cheese
 
@@ -49,7 +50,6 @@ with pkgs;
   silver-searcher
   fd
   ripgrep
-  exa
   ranger
   tree
   visidata
@@ -83,6 +83,7 @@ with pkgs;
   # System monitoring
   acpi
   htop
+  pstree
   bottom
   procs
   iotop
@@ -119,6 +120,7 @@ with pkgs;
   mosh
   fasd
   tmux
+  zellij
   cool-retro-term
 
   # DNS
@@ -126,12 +128,13 @@ with pkgs;
   whois
 
   # Learning
-  anki
+  unstable.anki
 
   # Clients
   kaggle
 
   # Cloud vendors
+  cloudflared
   awscli
   (unstable.google-cloud-sdk.withExtraComponents [unstable.google-cloud-sdk.components.kubectl
                                                   unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin])
@@ -146,6 +149,9 @@ with pkgs;
   stern
   k9s
 
+  # Programming
+  gforth
+
   # Docker
   dive
   docker-credential-gcr
@@ -153,6 +159,9 @@ with pkgs;
 
   # Bling
   cmatrix
+
+  # Credentials
+  authy
 
   # Fonts
   font-manager
@@ -168,6 +177,10 @@ with pkgs;
   gron
 
   # Communication
+  signal-desktop
   slack
+  element-desktop
+  zulip
   zoom-us
+  webex
 ]
