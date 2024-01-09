@@ -25,6 +25,11 @@
     ./tailscale.nix
   ];
 
+  # NIX =============================================================================
+
+  # Enable experimental nix command and flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # BOOT ============================================================================
 
   # Use the systemd-boot EFI boot loader.
