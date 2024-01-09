@@ -3,3 +3,4 @@ etc/
 elpa/
 
 custom.el
+eln-cache/
