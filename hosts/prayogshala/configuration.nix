@@ -17,9 +17,6 @@
     # nvidia
     ./nvidia_gpu.nix
 
-    # hidpi
-    ./hidpi.nix
-
     # virtualisation
     ./docker.nix
 
@@ -37,7 +34,6 @@
   # Use grub boot loader with efi support
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
   boot.loader.grub.devices = [ "nodev" ];
   boot.loader.grub.efiSupport = true;
   # --set-root being the /dev/disk/by-uuid/ of EFI partition
@@ -54,7 +50,7 @@
   '';
 
   # Clean tmp dir on boot
-  boot.cleanTmpDir = true;
+  boot.tmp.cleanOnBoot = true;
 
   # NETWORKING ======================================================================
 
@@ -153,7 +149,7 @@
   # FONTS ===========================================================================
 
   # Fonts
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     ubuntu_font_family
     roboto
     roboto-mono
@@ -285,8 +281,8 @@
   users.users.${config.settings.username} = {
     isNormalUser = true;
     description = "${config.settings.fullname}";
-    extraGroups = [ "wheel" "docker" "audio" ];
     shell = pkgs.fish;
+    extraGroups = [ "wheel" "docker" "audio" ];
     openssh = {
       authorizedKeys = {
         keyFiles = [
