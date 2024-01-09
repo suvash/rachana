@@ -177,6 +177,9 @@
     enableSSHSupport = true;
   };
 
+  # Enable fish shell
+  programs.fish.enable = true;
+
   # SECURITY ========================================================================
 
   security.sudo = {
