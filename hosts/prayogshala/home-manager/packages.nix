@@ -176,6 +176,9 @@ with pkgs;
   shellcheck
   gron
 
+  # Editors
+  obsidian
+
   # Communication
   signal-desktop
   slack

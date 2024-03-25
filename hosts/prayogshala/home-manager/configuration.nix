@@ -15,6 +15,15 @@ in {
     (import "${home-manager}/nixos")
   ];
 
+  nixpkgs = {
+    config = {
+      permittedInsecurePackages = [
+        # for obsidian
+        "electron-25.9.0"
+      ];
+    };
+  };
+
   home-manager.users.${config.settings.username} = {
     nixpkgs.config = {
       allowUnfree = true;
