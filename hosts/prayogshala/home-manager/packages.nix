@@ -8,6 +8,15 @@ with pkgs;
   cmake
   gnumake
 
+  # home-manager
+  home-manager
+
+  # CUDA
+  # gcc
+  # cudaPackages.cudatoolkit
+  # cudaPackages.cuda-samples
+  unstable.ollama
+
   # Git family
   tig
   gitAndTools.diff-so-fancy
@@ -27,7 +36,8 @@ with pkgs;
 
   # Graphics tools
   glxinfo
-  unstable.nvtop
+  unstable.nvtopPackages.nvidia
+  #unstable.nvtopPackages.full
   unstable.nvitop
   unigine-valley
   gnome.cheese
@@ -161,7 +171,7 @@ with pkgs;
   cmatrix
 
   # Credentials
-  authy
+  # authy
 
   # Fonts
   font-manager
