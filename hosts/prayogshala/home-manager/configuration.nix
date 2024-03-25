@@ -285,6 +285,7 @@ in {
         fonts = "fc-list : family";
         httpserve = "python -m http.server 7531";
         kssh = "kitty +kitten ssh";
+        stray = "sudo -i nix-store --gc --print-roots | egrep -v '^(/nix/var|/run/current-system|/run/booted-system|/proc|{memory|{censored)'";
       };
       functions = {
         cleansshhosts = ''
