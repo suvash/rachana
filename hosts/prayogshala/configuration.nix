@@ -165,8 +165,8 @@
     noto-fonts-extra
     lohit-fonts.devanagari
     lohit-fonts.nepali
-    nerdfonts
-    emacs-all-the-icons-fonts
+    # nerdfonts
+    # emacs-all-the-icons-fonts
   ];
 
   # PROGRAMS ========================================================================
