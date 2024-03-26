@@ -118,6 +118,8 @@ in {
       enable = true;
       fade = true;
       fadeDelta = 3;
+      backend = "xrender";
+      vSync = true;
     };
 
     services.random-background = {

@@ -36,8 +36,8 @@ with pkgs;
 
   # Graphics tools
   glxinfo
-  unstable.nvtopPackages.nvidia
-  #unstable.nvtopPackages.full
+  #unstable.nvtopPackages.nvidia
+  unstable.nvtopPackages.full
   unstable.nvitop
   unigine-valley
   gnome.cheese
