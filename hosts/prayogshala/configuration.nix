@@ -29,6 +29,7 @@
 
   # Enable experimental nix command and flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.trusted-users = [ "${config.settings.username}" ];
 
   # BOOT ============================================================================
 
