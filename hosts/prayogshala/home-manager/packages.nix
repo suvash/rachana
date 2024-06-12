@@ -188,8 +188,10 @@ with pkgs;
 
   # Editors
   obsidian
+  libreoffice
 
   # Communication
+  thunderbird
   signal-desktop
   slack
   element-desktop
