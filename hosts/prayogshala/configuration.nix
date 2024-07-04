@@ -212,9 +212,9 @@
   services.xserver.autorun = true;
 
   # Configure keymap for X11
-  services.xserver.layout = "us";
-  services.xserver.xkbVariant = "";
-  services.xserver.xkbOptions = "";
+  services.xserver.xkb.layout = "us";
+  services.xserver.xkb.variant = "";
+  services.xserver.xkb.options = "";
   services.xserver.autoRepeatDelay = 200;
   services.xserver.autoRepeatInterval = 60;
 
@@ -232,8 +232,8 @@
   };
 
   # Select a display/login manager
+  services.displayManager.defaultSession = "xfce+i3";
   services.xserver.displayManager = {
-    defaultSession = "xfce+i3";
     lightdm = {
       enable = true;
       # https://github.com/NixOS/nixpkgs/issues/108289#issuecomment-758263467
@@ -282,7 +282,7 @@
   # Avahi
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
     publish = {
       enable = true;
       addresses = true;

@@ -179,7 +179,6 @@ with pkgs;
   i3status-rust
 
   # Linters etc
-  nixfmt
   yamllint
   ispell
   shellcheck
