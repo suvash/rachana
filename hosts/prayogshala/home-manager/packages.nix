@@ -11,11 +11,8 @@ with pkgs;
   # home-manager
   home-manager
 
-  # CUDA
-  # gcc
-  # cudaPackages.cudatoolkit
-  # cudaPackages.cuda-samples
-  unstable.ollama
+  # Nix
+  nix-index
 
   # Git family
   tig
@@ -68,6 +65,7 @@ with pkgs;
   unzip
   multitail
   dos2unix
+  zip
 
   # Help
   tealdeer
@@ -93,6 +91,7 @@ with pkgs;
   # System monitoring
   acpi
   htop
+  btop
   pstree
   bottom
   procs

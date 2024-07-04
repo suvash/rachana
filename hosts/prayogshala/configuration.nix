@@ -181,6 +181,18 @@
   # Enable fish shell
   programs.fish.enable = true;
 
+  # Enable nix-ld
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      libgcc.lib # uvicorn
+    ];
+  };
+
+  # Enable envfs
+  # services.envfs.enable = true;
+
+
   # SECURITY ========================================================================
 
   security.sudo = {
