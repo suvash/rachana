@@ -47,39 +47,56 @@
       "Tailscale" = 1475387142;
       "Vimari" = 1480933944;
       "iNet Network Scanner" = 403304796;
+      "Todoist" = 585829637;
+      "Blinks" = 998804308;
     };
 
     casks = [
-      "alfred"
       "amethyst"
       "anki"
       "authy"
+      "arc"
       "brave-browser"
+      "blackhole-16ch"
       "chrysalis"
       "coconutbattery"
+      "cursor"
       "discord"
       "disk-inventory-x"
       "docker"
       "firefox"
+      "figma"
       "font-fira-code"
       "font-ubuntu"
       "font-ubuntu-mono"
       "google-chrome"
       "iterm2"
-      "kitty"
+      "thunderbird"
       "karabiner-elements"
       "keepingyouawake"
       "kensingtonworks"
       "keka"
       "kekaexternalhelper"
+      "kindle"
+      "kitty"
+      "libreoffice"
+      "linear-linear"
+      "notion"
+      "obsidian"
       "postman"
+      "raycast"
       "signal"
       "spotify"
+      "send-to-kindle"
       "vlc"
       "visual-studio-code"
+      "webex"
+      "wacom-tablet"
       "whatsapp"
       "zotero"
       "zoom"
+      "zulip"
+      "zed"
     ];
 
   };

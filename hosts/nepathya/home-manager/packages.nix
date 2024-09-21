@@ -27,7 +27,6 @@ with pkgs;
 
   # File & Directory tools
   bat
-  exa
   fd
   fzf
   which
@@ -35,6 +34,8 @@ with pkgs;
   rlwrap
   ripgrep
   tree
+  rename
+  ranger
 
   # Watchers followers etc
   watch
@@ -67,6 +68,7 @@ with pkgs;
   nmap
   wakeonlan
   dogdns
+  magic-wormhole
 
   # Cloud vendors
   awscli2
