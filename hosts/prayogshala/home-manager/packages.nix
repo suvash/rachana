@@ -188,6 +188,9 @@ with pkgs;
   obsidian
   libreoffice
 
+  # Database
+  pgcli
+
   # Communication
   thunderbird
   signal-desktop
