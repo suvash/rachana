@@ -33,11 +33,9 @@ with pkgs;
 
   # Graphics tools
   glxinfo
-  #unstable.nvtopPackages.nvidia
   unstable.nvtopPackages.full
   unstable.nvitop
-  unigine-valley
-  gnome.cheese
+  cheese
 
   # Pulseaudio tools
   paprefs
@@ -47,7 +45,6 @@ with pkgs;
 
   # Entertainment
   spotify
-  unstable.plex-media-player
   playerctl
 
   # Papers, Notes etc.
@@ -145,8 +142,6 @@ with pkgs;
   # Cloud vendors
   cloudflared
   awscli
-  (unstable.google-cloud-sdk.withExtraComponents [unstable.google-cloud-sdk.components.kubectl
-                                                  unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin])
 
   # Infrastructure
   iamy
@@ -198,5 +193,4 @@ with pkgs;
   element-desktop
   zulip
   zoom-us
-  webex
 ]
