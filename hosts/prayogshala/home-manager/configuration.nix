@@ -3,8 +3,8 @@
 let
   home-manager = builtins.fetchGit {
     url = "https://github.com/nix-community/home-manager.git";
-    rev = "e1391fb22e18a36f57e6999c7a9f966dc80ac073";
-    ref = "release-24.05";
+    rev = "bd65bc3cde04c16755955630b344bc9e35272c56";
+    ref = "release-24.11";
   };
 in {
   imports = [
