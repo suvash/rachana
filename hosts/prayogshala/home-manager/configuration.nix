@@ -361,8 +361,8 @@ in {
           "Mod4+ctrl+6" = "exec playerctl previous";
           "Mod4+ctrl+8" = "exec playerctl play-pause";
           "Mod4+ctrl+0" = "exec playerctl next";
-          "Mod4+ctrl+Up" = "exec pactl set-sink-volume @DEFAULT_SINK@ +10%";
-          "Mod4+ctrl+Down" = "exec pactl set-sink-volume @DEFAULT_SINK@ -10%";
+          "Mod4+ctrl+Up" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +10%";
+          "Mod4+ctrl+Down" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -10%";
 
           # Utilities
           "Mod4+ctrl+l" =

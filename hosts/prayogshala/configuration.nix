@@ -78,15 +78,6 @@
   networking.useDHCP = false;
   networking.interfaces.eno1.useDHCP = true;
 
-  # HARDWARE ========================================================================
-
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio = {
-    enable = true;
-    package = pkgs.pulseaudioFull;
-  };
-
   # LOCALISATION ====================================================================
 
   # Select internationalisation properties.
@@ -205,6 +196,16 @@
 
   # Podman
   virtualisation.podman.enable = false;
+
+  # AUDIO ===========================================================================
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
+  };
 
   # XSERVER =========================================================================
 
