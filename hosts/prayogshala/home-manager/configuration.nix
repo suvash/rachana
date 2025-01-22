@@ -37,6 +37,12 @@ in {
     services.pasystray.enable = true;
     services.udiskie.enable = true;
     services.unclutter.enable = true;
+    services.safeeyes.enable = true;
+    services.snixembed = {
+      enable = true;
+      beforeUnits = [ "safeeyes.service" ];
+    };
+
 
     services.dunst = {
       enable = true;
