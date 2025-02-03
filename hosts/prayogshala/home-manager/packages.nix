@@ -132,6 +132,9 @@ with pkgs;
   zellij
   cool-retro-term
 
+  # Editors
+  zed-editor
+
   # DNS
   dnsutils
   whois
