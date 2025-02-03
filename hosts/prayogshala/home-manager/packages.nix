@@ -133,7 +133,7 @@ with pkgs;
   cool-retro-term
 
   # Editors
-  zed-editor
+  unstable.zed-editor
 
   # DNS
   dnsutils
