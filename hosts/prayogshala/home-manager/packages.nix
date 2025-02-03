@@ -49,6 +49,7 @@ with pkgs;
 
   # Papers, Notes etc.
   zotero
+  calibre
 
   # File manipulation
   silver-searcher
