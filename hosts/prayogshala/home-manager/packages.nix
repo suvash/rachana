@@ -64,6 +64,8 @@ with pkgs;
   multitail
   dos2unix
   zip
+  catdoc # xls2csv
+  xlsx2csv 
 
   # Help
   tealdeer
