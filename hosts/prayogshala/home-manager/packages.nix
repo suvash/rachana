@@ -188,6 +188,7 @@ with pkgs;
   # Editors
   obsidian
   libreoffice
+  unstable.windsurf
 
   # Database
   pgcli
