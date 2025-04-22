@@ -171,7 +171,7 @@ with pkgs;
   cmatrix
 
   # Credentials
-  # authy
+  unstable.ente-auth
 
   # Fonts
   font-manager
