@@ -173,6 +173,9 @@ with pkgs;
   # Credentials
   unstable.ente-auth
 
+  # Benchmark
+  geekbench
+
   # Fonts
   font-manager
 
