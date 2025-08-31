@@ -58,7 +58,7 @@ with pkgs;
   ranger
   tree
   visidata
-  xsv
+  xan
   pigz
   unzip
   multitail
@@ -84,7 +84,7 @@ with pkgs;
   # Hardware info
   lshw
   hwinfo
-  hardinfo
+  hardinfo2
   lm_sensors
   lsof
 
@@ -100,7 +100,7 @@ with pkgs;
   dfc
   duf
   unstable.du-dust
-  dstat
+  dool
   powertop
   ncdu
   baobab
@@ -124,7 +124,7 @@ with pkgs;
 
   # Terminals / shells
   kitty
-  konsole
+  kdePackages.konsole
   parallel
   mosh
   fasd
